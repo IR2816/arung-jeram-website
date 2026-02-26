@@ -52,28 +52,6 @@ const faqData = [
     ]
   },
   {
-    category: 'Persyaratan',
-    icon: Users,
-    faqs: [
-      {
-        q: 'Berapa usia minimal untuk rafting?',
-        a: 'Usia minimal 7 tahun untuk Family Trip, 10 tahun untuk Panorama Trip, dan 12 tahun untuk Adventure Trip. Anak-anak harus didampingi orang tua.'
-      },
-      {
-        q: 'Apakah harus bisa berenang?',
-        a: 'Tidak wajib, karena semua peserta wajib menggunakan pelampung (life jacket) dan helm. Namun untuk kenyamanan, kemampuan berenang dasar sangat direkomendasikan.'
-      },
-      {
-        q: 'Apakah ada batasan berat badan?',
-        a: 'Ya, berat badan maksimal 100 kg untuk kenyamanan dan keamanan perahu. Jika ada kondisi khusus, silakan konsultasikan terlebih dahulu.'
-      },
-      {
-        q: 'Apakah ibu hamil boleh rafting?',
-        a: 'Maaf, ibu hamil tidak diizinkan untuk rafting demi keselamatan. Namun kami menyediakan alternatif aktivitas seperti cafe dan area bermain.'
-      },
-    ]
-  },
-  {
     category: 'Aktivitas',
     icon: Calendar,
     faqs: [
