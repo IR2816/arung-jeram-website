@@ -1,0 +1,172 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Admin/User for authentication (NextAuth compatible)
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String    // Hashed password
+  image         String?
+  role          String    @default("admin") // admin, superadmin
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+}
+
+// NextAuth Account (for OAuth providers if needed)
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([provider, providerAccountId])
+}
+
+// NextAuth Session
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// NextAuth Verification Token (for email verification)
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+
+// Rafting packages
+model Package {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String
+  price       Float
+  duration    String    // e.g., "3 hours", "Full day"
+  distance    String?   // e.g., "5 KM"
+  minAge      Int?
+  capacity    String?   // e.g., "6 orang/perahu"
+  difficulty  String    // Beginner, Intermediate, Advanced
+  location    String?
+  included    String?   // JSON string of included items
+  highlights  String?   // JSON string of highlights
+  imageUrl    String?
+  gallery     String?   // JSON string of image URLs
+  featured    Boolean   @default(false)
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  bookings    Booking[]
+}
+
+// Customer bookings
+model Booking {
+  id            String   @id @default(cuid())
+  packageId     String?
+  package       Package? @relation(fields: [packageId], references: [id])
+  customerName  String
+  customerEmail String?
+  customerPhone String
+  bookingDate   DateTime
+  numberOfPeople Int    @default(1)
+  totalPrice    Float?
+  addOns        String?  // JSON string of selected add-ons
+  status        String   @default("pending") // pending, confirmed, completed, cancelled
+  notes         String?
+  source        String?  // website, whatsapp, direct
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Customer testimonials
+model Testimonial {
+  id               String   @id @default(cuid())
+  customerName     String
+  customerLocation String?
+  rating           Int      // 1-5
+  comment          String
+  imageUrl         String?
+  approved         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// Gallery images
+model Gallery {
+  id          String   @id @default(cuid())
+  title       String?
+  description String?
+  imageUrl    String
+  category    String?  // rafting, scenery, team, etc.
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Site settings
+model SiteSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Contact messages
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Rate limiting tracker
+model RateLimit {
+  id          String   @id @default(cuid())
+  ip          String
+  endpoint    String
+  count       Int      @default(1)
+  windowStart DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@unique([ip, endpoint])
+}
