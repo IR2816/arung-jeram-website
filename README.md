@@ -1,8 +1,8 @@
 # 🌊 SEMBAR ADVENTURE - Website Arung Jeram Cisadane
 
-Website untuk **Sembah Adventure** - wahana arung jeram di Sungai Cisadane, Bogor.
+Website untuk **Sembar Adventure** - wahana arung jeram di Sungai Cisadane, Bogor.
 
-<img src="public/images/Rafting/webp/Icon_sembar_adventure.webp" alt="Sembah Adventure" width="140" />
+<img src="public/images/Rafting/webp/Icon_sembar_adventure.webp" alt="Sembar Adventure" width="140" />
 
 ## 📍 Lokasi
 
@@ -172,4 +172,4 @@ Informasi kontak akan diperbarui setelah akun resmi siap.
 
 ---
 
-© 2025 Sembah Adventure. All rights reserved.
+© 2025 Sembar Adventure. All rights reserved.

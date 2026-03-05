@@ -103,7 +103,7 @@ export function AdminDashboard({ user, stats, recentBookings, recentMessages }: 
               <Waves className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-lg text-gray-800">Sembah Adventure</h1>
+              <h1 className="font-bold text-lg text-gray-800">Sembar Adventure</h1>
               <p className="text-xs text-gray-500">Admin Dashboard</p>
             </div>
           </div>

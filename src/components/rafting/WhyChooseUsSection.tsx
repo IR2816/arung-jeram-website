@@ -2,12 +2,12 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Shield, 
-  Award, 
-  Users, 
-  MapPin, 
-  Clock, 
+import {
+  Shield,
+  Award,
+  Users,
+  MapPin,
+  Clock,
   HeartHandshake,
   ThumbsUp,
   Sparkles
@@ -71,18 +71,18 @@ const testimonials = [
 
 export function WhyChooseUsSection() {
   return (
-    <section id="tentang" className="py-20 bg-gradient-to-b from-emerald-50 to-white">
+    <section id="tentang" className="py-12 md:py-24 bg-gradient-to-b from-emerald-50 to-white">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 mb-4 px-4 py-2">
+            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-100 mb-4 px-4 py-2">
               <Sparkles className="h-4 w-4 mr-2" />
               Kenapa Memilih Kami?
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Sembah Adventure, Pilihan Tepat untuk Petualangan Anda
+            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+              Sembar Adventure, Pilihan Tepat untuk Petualangan Anda
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
               Lebih dari sekadar rafting. Kami menyediakan pengalaman petualangan yang aman, seru, dan berkesan.
             </p>
           </div>
@@ -92,7 +92,7 @@ export function WhyChooseUsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {trustPoints.map((point, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white text-center hover:-translate-y-2 h-full group overflow-hidden">
+              <Card className="border border-emerald-50 shadow-sm hover:shadow-premium transition-all duration-300 bg-white text-center hover-lift h-full group overflow-hidden">
                 <CardContent className="pt-8 pb-6">
                   <div className={`w-16 h-16 bg-gradient-to-br ${point.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <point.icon className="h-8 w-8 text-white" />
@@ -107,13 +107,13 @@ export function WhyChooseUsSection() {
 
         {/* Stats/Differentiators */}
         <ScrollReveal>
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 mb-16">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 md:p-8 mb-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {differentiators.map((item, i) => (
                 <div key={i} className="text-center text-white">
-                  <p className="text-3xl md:text-4xl font-bold mb-1">{item.value}</p>
-                  <p className="text-emerald-200 text-sm mb-1">{item.label}</p>
-                  <p className="text-emerald-100 text-xs">{item.desc}</p>
+                  <p className="text-3xl md:text-4xl font-bold mb-1 font-inter">{item.value}</p>
+                  <p className="text-emerald-100 font-medium text-sm mb-1 uppercase tracking-wider">{item.label}</p>
+                  <p className="text-emerald-200/80 text-xs">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -131,19 +131,19 @@ export function WhyChooseUsSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full">
+              <Card className="border border-emerald-50 shadow-md hover:shadow-premium transition-all duration-300 bg-white h-full hover-lift">
                 <CardContent className="p-6">
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
-                    {[1,2,3,4,5].map((star) => (
+                    {[1, 2, 3, 4, 5].map((star) => (
                       <svg key={star} className="h-5 w-5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
-                  
+
                   <p className="text-gray-600 mb-6 italic">&ldquo;{t.comment}&rdquo;</p>
-                  
+
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                       {t.name.charAt(0)}

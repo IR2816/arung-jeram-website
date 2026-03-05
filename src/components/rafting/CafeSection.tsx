@@ -148,17 +148,6 @@ export function CafeSection() {
 
           {/* Info & Image */}
           <div className="space-y-8">
-            <ScrollReveal direction="right" delay={100}>
-              <div className="relative h-72 rounded-3xl overflow-hidden shadow-xl group">
-                <Image
-                  src="/images/cafe/warkop-menu.webp"
-                  alt="Menu Warkop"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </ScrollReveal>
-
             <ScrollReveal direction="right" delay={200}>
               <Card className="border-0 shadow-xl bg-gradient-to-br from-amber-500 to-orange-500 text-white overflow-hidden">
                 <CardContent className="p-8">
@@ -190,7 +179,7 @@ export function CafeSection() {
             <ScrollReveal direction="right" delay={300}>
               <Card className="border-0 shadow-xl bg-white overflow-hidden">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Lokasi Sembah Adventure</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Lokasi Sembar Adventure</h3>
                   <p className="text-gray-600 flex items-start gap-3 leading-relaxed">
                     <MapPin className="h-6 w-6 text-amber-500 flex-shrink-0 mt-1" />
                     <span>

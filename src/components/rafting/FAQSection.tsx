@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -77,7 +77,7 @@ const faqData = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-24 bg-gray-50">
+    <section id="faq" className="py-12 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -94,11 +94,11 @@ export function FAQSection() {
           </div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto space-y-5">
+        <div className="max-w-4xl mx-auto space-y-6">
           {faqData.map((category, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Card className="border-0 shadow-md hover:shadow-lg transition-shadow bg-white overflow-hidden">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-600 p-5">
+              <Card className="border border-purple-50 shadow-md hover:shadow-premium transition-all duration-300 bg-white overflow-hidden hover-lift">
+                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-6">
                   <div className="flex items-center gap-3 text-white">
                     <category.icon className="h-6 w-6" />
                     <h3 className="text-lg font-bold">{category.category}</h3>
@@ -126,18 +126,18 @@ export function FAQSection() {
         {/* CTA */}
         <ScrollReveal delay={400}>
           <div className="mt-12 text-center">
-            <Card className="inline-block border-0 shadow-lg bg-gradient-to-r from-emerald-50 to-teal-50">
+            <Card className="inline-block border border-emerald-100 shadow-xl bg-white/80 backdrop-blur-md">
               <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-emerald-500 p-3 rounded-xl">
-                    <MessageCircle className="h-6 w-6 text-white" />
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-4 rounded-2xl shadow-lg animate-bounce-gentle">
+                    <MessageCircle className="h-7 w-7 text-white" />
                   </div>
                   <div className="text-left">
                     <p className="font-semibold text-gray-800">Masih punya pertanyaan?</p>
                     <p className="text-gray-600 text-sm">Chat langsung dengan tim kami</p>
                   </div>
-                  <a 
-                    href={getWhatsAppUrl('Halo Sembah Adventure, saya ingin bertanya')}
+                  <a
+                    href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya')}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

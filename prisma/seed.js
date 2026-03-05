@@ -101,7 +101,7 @@ async function main() {
     where: { email: 'admin@sembahadventure.com' },
     update: {},
     create: {
-      name: 'Admin Sembah',
+      name: 'Admin Sembar',
       email: 'admin@sembahadventure.com',
       password: hashedPassword,
       role: 'superadmin',
@@ -110,7 +110,7 @@ async function main() {
   console.log(`✅ Admin user: ${admin.email}`)
 
   const settings = [
-    { key: 'site_name', value: 'Sembah Adventure' },
+    { key: 'site_name', value: 'Sembar Adventure' },
     { key: 'site_email', value: 'sembaradventure@gmail.com' },
     { key: 'site_phone', value: '+62 812-3456-7890' },
     { key: 'site_whatsapp', value: '6281234567890' },

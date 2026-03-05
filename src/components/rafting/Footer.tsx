@@ -9,12 +9,12 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
-              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-xl shadow-md">
                 <Waves className="h-6 w-6 text-white" />
               </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-white text-lg font-bold">SEMBAR</span>
-                <span className="text-emerald-400 text-xs font-medium -mt-1">ADVENTURE</span>
+              <div className="flex flex-col leading-tight font-sans">
+                <span className="text-white text-lg font-bold tracking-tighter">SEMBAR</span>
+                <span className="text-emerald-400 text-[10px] font-bold tracking-[0.2em] -mt-1">ADVENTURE</span>
               </div>
             </Link>
             <p className="text-gray-400 mb-4 text-sm">
@@ -26,7 +26,7 @@ export function Footer() {
               </a>
               <a href="https://tiktok.com/@sembaradventure" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-black p-2 rounded-lg transition-all">
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
               </a>
               <a href="https://facebook.com/sembaradventure" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-blue-600 p-2 rounded-lg transition-all">
@@ -86,7 +86,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Sembah Adventure. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sembar Adventure. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -11,7 +11,6 @@ const galleryImages = [
   { src: '/images/Rafting/webp/11.webp', alt: 'Pemandu Lokal', span: false },
   { src: '/images/Rafting/webp/1.webp', alt: 'Rafting Keluarga', span: false },
   { src: '/images/cafe/warkop-gallery.webp', alt: 'Sembar Sunset Cafe', span: true },
-  { src: '/images/cafe/warkop-menu.webp', alt: 'Menu Cafe', span: false },
   { src: '/images/Rafting/webp/10.webp', alt: 'Rafting Adventure', span: false },
   { src: '/images/Rafting/webp/3.webp', alt: 'Petualangan Seru', span: false },
   { src: '/images/Rafting/webp/4.webp', alt: 'Clip Video', span: false },
@@ -19,7 +18,7 @@ const galleryImages = [
 
 export function GallerySection() {
   return (
-    <section id="galeri" className="py-24 bg-gray-50">
+    <section id="galeri" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -38,10 +37,9 @@ export function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {galleryImages.map((img, i) => (
             <ScrollReveal key={i} delay={i * 50}>
-              <div 
-                className={`relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ${
-                  img.span ? 'col-span-2 row-span-2' : ''
-                }`}
+              <div
+                className={`relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ${img.span ? 'col-span-2 row-span-2' : ''
+                  }`}
               >
                 <div className={`relative ${img.span ? 'h-full min-h-[320px]' : 'h-48'}`}>
                   <Image

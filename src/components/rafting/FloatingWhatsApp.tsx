@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp'
 export function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const whatsappUrl = getWhatsAppUrl('Halo Sembah Adventure, saya ingin bertanya tentang paket rafting!')
+  const whatsappUrl = getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya tentang paket rafting!')
 
   return (
     <div className="fixed bottom-6 right-6 z-[100]">
@@ -27,7 +27,7 @@ export function FloatingWhatsApp() {
               <MessageCircle className="h-6 w-6 text-white" />
             </div>
             <div>
-              <p className="font-bold text-gray-800">Sembah Adventure</p>
+              <p className="font-bold text-gray-800">Sembar Adventure</p>
               <p className="text-xs text-gray-500">Biasanya balas dalam 5 menit</p>
             </div>
           </div>

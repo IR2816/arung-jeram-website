@@ -58,7 +58,7 @@ const cafeMenu = {
 }
 
 export function AddOnSection() {
-  const whatsappUrl = getWhatsAppUrl('Halo Sembah Adventure, saya ingin menambahkan dokumentasi saat rafting!')
+  const whatsappUrl = getWhatsAppUrl('Halo Sembar Adventure, saya ingin menambahkan dokumentasi saat rafting!')
 
   return (
     <section id="addon" className="py-24 bg-gradient-to-b from-white to-gray-50">

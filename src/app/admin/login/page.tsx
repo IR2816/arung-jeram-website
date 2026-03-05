@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
           </div>
           <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
           <CardDescription>
-            Sembah Adventure Dashboard
+            Sembar Adventure Dashboard
           </CardDescription>
         </CardHeader>
         <CardContent className="pt-4">
