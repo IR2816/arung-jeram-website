@@ -29,7 +29,6 @@ export function ContactSection() {
             title="Hubungi Kami"
             description="Isi form ini, lalu kami akan balas cepat via WhatsApp."
             address="Desa Putat Nutug, Ciseeng, Bogor"
-            phone="+62 812-3456-7890"
             email="sembaradventure@gmail.com"
             web={{ label: 'Instagram @sembaradventure', url: 'https://instagram.com/sembaradventure' }}
             whatsappGreeting="Halo Sembar Adventure, saya ingin bertanya:"

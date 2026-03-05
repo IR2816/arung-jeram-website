@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
-import { getWhatsAppUrl } from "@/lib/whatsapp"
+import { getWhatsAppUrl, getWhatsAppNumber, formatPhoneNumber } from "@/lib/whatsapp"
 
 interface Contact2Props {
   embedded?: boolean

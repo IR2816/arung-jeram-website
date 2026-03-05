@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Waves, MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react'
+import { getWhatsAppNumber, formatPhoneNumber } from '@/lib/whatsapp'
 
 export function Footer() {
   return (
@@ -64,7 +65,7 @@ export function Footer() {
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
                     <Phone className="h-5 w-5 text-emerald-400" />
                   </div>
-                  <p className="text-xs font-bold">+62 812-3456-7890</p>
+                  <p className="text-xs font-bold">{formatPhoneNumber(getWhatsAppNumber())}</p>
                 </div>
               </div>
               <div className="flex flex-col gap-6">
