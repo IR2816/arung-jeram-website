@@ -235,7 +235,7 @@ _Dikirim dari website sembaradventure.com_`
                             mode="single"
                             selected={date}
                             onSelect={setDate}
-                            disabled={(date) => date < new Date() || date.getDay() === 5}
+                            disabled={(date) => date < new Date()}
                             initialFocus
                           />
                         </PopoverContent>

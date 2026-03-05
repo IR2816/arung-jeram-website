@@ -78,7 +78,7 @@ export function Footer() {
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
                     <Clock className="h-5 w-5 text-emerald-400" />
                   </div>
-                  <p className="text-xs font-bold uppercase">Sen-Kam: 10:00-16:30</p>
+                  <p className="text-xs font-bold uppercase">11:00-15:00</p>
                 </div>
               </div>
             </div>

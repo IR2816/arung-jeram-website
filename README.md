@@ -23,9 +23,7 @@ Website ini telah diperbarui secara total dengan standar desain web terkini:
 **Google Maps:** [Klik untuk melihat lokasi](https://www.google.com/maps/place/SEMBAR+ADVENTURE+(Rafting,+Outbond,Cafe)/@-6.4684479,106.6618818,17z/)
 
 **Jam Operasional:** 
-- Senin - Kamis: 10:00 - 16:30
-- Jumat: Tutup
-- Sabtu - Minggu: 10:00 - 16:30
+- 11:00 - 15:00
 
 ---
 
