@@ -30,7 +30,7 @@ export function ContactSection() {
             description="Isi form ini, lalu kami akan balas cepat via WhatsApp."
             address="Desa Putat Nutug, Ciseeng, Bogor"
             email="sembaradventure@gmail.com"
-            web={{ label: 'Instagram @sembaradventure', url: 'https://instagram.com/sembaradventure' }}
+            web={{ label: 'Instagram @sembar_adventure', url: 'https://www.instagram.com/sembar_adventure/' }}
             whatsappGreeting="Halo Sembar Adventure, saya ingin bertanya:"
           />
         </ScrollReveal>
