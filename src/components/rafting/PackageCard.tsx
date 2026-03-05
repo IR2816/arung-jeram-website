@@ -29,6 +29,11 @@ interface PackageCardProps {
 export function PackageCard({ pkg }: PackageCardProps) {
   const whatsappUrl = getWhatsAppUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}*. Bisa info lebih lanjut?`)
 
+  const handleSelect = () => {
+    // Dispatch custom event for BookingSection to pick up
+    window.dispatchEvent(new CustomEvent('select-package', { detail: pkg.id }));
+  };
+
   return (
     <Card className="group overflow-hidden border-0 bg-white shadow-md hover:shadow-premium transition-all duration-500 rounded-[2.5rem] flex flex-col h-full max-w-[400px] mx-auto card-shine hover-lift">
       {/* Upper Section: Image with Dynamic Height */}
@@ -117,7 +122,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
       {/* Footer / CTA */}
       <CardFooter className="p-6 pt-0 flex flex-col gap-3 mt-auto">
         <div className="flex flex-col gap-2 w-full">
-          <a href="#booking" className="w-full group/btn">
+          <a href="#booking" className="w-full group/btn" onClick={handleSelect}>
             <Button className="w-full h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-xl transition-all duration-300 font-black flex items-center justify-center gap-2 text-base uppercase tracking-wider">
               Amankan Slot
               <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
