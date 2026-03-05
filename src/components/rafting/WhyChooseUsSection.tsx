@@ -89,7 +89,7 @@ export function WhyChooseUsSection() {
                       <div key={n} className="w-10 h-10 rounded-full border-2 border-emerald-900 bg-emerald-700 flex items-center justify-center text-[10px] font-bold">Rescuer</div>
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-emerald-200">100+ Certified Guides</span>
+                  <span className="text-sm font-medium text-emerald-200">Trained Guides</span>
                 </div>
               </div>
             </div>
