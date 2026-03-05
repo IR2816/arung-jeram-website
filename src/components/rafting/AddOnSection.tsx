@@ -61,7 +61,7 @@ export function AddOnSection() {
   const whatsappUrl = getWhatsAppUrl('Halo Sembar Adventure, saya ingin menambahkan dokumentasi saat rafting!')
 
   return (
-    <section id="addon" className="py-24 relative overflow-hidden bg-white">
+    <section id="addon" className="py-16 md:py-24 relative overflow-hidden bg-white">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-1/4 -left-20 w-80 h-80 bg-emerald-200 rounded-full blur-[100px]" />
@@ -72,15 +72,15 @@ export function AddOnSection() {
 
         {/* Add-on Rafting - Enhanced Design */}
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <Badge className="bg-emerald-500/10 text-emerald-600 border-emerald-200 mb-4 px-4 py-2 uppercase tracking-widest font-bold">
               <Camera className="h-4 w-4 mr-2" />
               DOKUMENTASI PREMIUM
             </Badge>
-            <h2 className="text-4xl md:text-6xl font-black text-emerald-950 mb-6 font-outfit uppercase tracking-tighter">
+            <h2 className="text-3xl md:text-6xl font-black text-emerald-950 mb-4 md:mb-6 font-outfit uppercase tracking-tighter leading-none">
               ABADIKAN <span className="text-emerald-500">MOMEN</span> BERHARGA
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg font-medium">
               Dapatkan foto dan video profesional dengan peralatan berkualitas tinggi untuk mengingat setiap detik petualangan Anda.
             </p>
           </div>
@@ -99,22 +99,22 @@ export function AddOnSection() {
                     </div>
                   )}
 
-                  <CardContent className={`p-8 ${item.popular ? 'pt-16' : ''}`}>
+                  <CardContent className={`p-6 md:p-8 ${item.popular ? 'pt-12 md:pt-16' : ''}`}>
                     {/* Icon & Title */}
-                    <div className="text-center mb-8">
-                      <div className={`w-20 h-20 mx-auto rounded-[2rem] flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg ${item.popular ? 'bg-emerald-600 shadow-emerald-200' : 'bg-emerald-50 border border-emerald-100'}`}>
-                        <item.icon className={`h-10 w-10 ${item.popular ? 'text-white' : 'text-emerald-600'}`} />
+                    <div className="text-center mb-6 md:mb-8">
+                      <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl md:rounded-[2rem] flex items-center justify-center mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg ${item.popular ? 'bg-emerald-600 shadow-emerald-200' : 'bg-emerald-50 border border-emerald-100'}`}>
+                        <item.icon className={`h-8 w-8 md:h-10 md:w-10 ${item.popular ? 'text-white' : 'text-emerald-600'}`} />
                       </div>
-                      <h3 className="font-black text-2xl text-emerald-950 font-outfit uppercase tracking-tight">{item.name}</h3>
-                      <p className="text-gray-500 text-sm mt-3 font-medium px-4">{item.desc}</p>
+                      <h3 className="font-black text-xl md:text-2xl text-emerald-950 font-outfit uppercase tracking-tight">{item.name}</h3>
+                      <p className="text-gray-500 text-xs md:text-sm mt-2 md:mt-3 font-medium px-4">{item.desc}</p>
                     </div>
 
                     {/* Price */}
-                    <div className="text-center mb-8 bg-emerald-50/50 py-6 rounded-3xl border border-emerald-100/50">
+                    <div className="text-center mb-6 md:mb-8 bg-emerald-50/50 py-4 md:py-6 rounded-2xl md:rounded-3xl border border-emerald-100/50">
                       <span className="text-[10px] text-emerald-600 font-bold uppercase tracking-widest block mb-1">Mulai dari</span>
                       <div className="flex items-baseline justify-center gap-1">
-                        <span className="text-lg font-bold text-emerald-800">Rp</span>
-                        <span className={`text-5xl font-black font-outfit ${item.popular ? 'text-emerald-600' : 'text-emerald-950'}`}>{item.price}</span>
+                        <span className="text-sm md:text-lg font-bold text-emerald-800">Rp</span>
+                        <span className={`text-3xl md:text-5xl font-black font-outfit ${item.popular ? 'text-emerald-600' : 'text-emerald-950'}`}>{item.price}</span>
                       </div>
                     </div>
 
@@ -150,10 +150,10 @@ export function AddOnSection() {
         </div>
 
         {/* Divider Area */}
-        <div className="relative mb-24 overflow-hidden py-12">
+        <div className="relative mb-16 md:mb-24 overflow-hidden py-8 md:py-12">
           <div className="absolute top-1/2 left-0 w-full h-px bg-emerald-100" />
           <div className="relative flex justify-center">
-            <Badge variant="outline" className="px-8 py-3 bg-white text-emerald-800 border-2 border-emerald-100 rounded-full font-black uppercase tracking-widest text-xs shadow-sm">
+            <Badge variant="outline" className="px-6 md:px-8 py-2 md:py-3 bg-white text-emerald-800 border-2 border-emerald-100 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs shadow-sm">
               Tanpa perlu booking rafting
             </Badge>
           </div>
@@ -161,15 +161,15 @@ export function AddOnSection() {
 
         {/* Cafe Menu - Ultra Modern Design */}
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <Badge className="bg-amber-500/10 text-amber-600 border-amber-200 mb-4 px-4 py-2 uppercase tracking-widest font-bold">
               <Coffee className="h-4 w-4 mr-2" />
               SEMBAR SUNSET CAFE
             </Badge>
-            <h2 className="text-4xl md:text-6xl font-black text-emerald-950 mb-6 font-outfit uppercase tracking-tighter">
+            <h2 className="text-3xl md:text-6xl font-black text-emerald-950 mb-4 md:mb-6 font-outfit uppercase tracking-tighter leading-none">
               MENU <span className="text-amber-500">SIGNATURE</span> KAMI
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg font-medium">
               Nikmati hidangan lezat dan kopi hangat di tepi sungai. Tersedia untuk umum tanpa harus mengikuti aktivitas rafting.
             </p>
           </div>
@@ -187,16 +187,16 @@ export function AddOnSection() {
                   <h3 className="text-2xl font-black font-outfit uppercase tracking-tight">GANCARAN RINGAN</h3>
                 </div>
               </div>
-              <CardContent className="p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
-                <ul className="space-y-6 flex-1">
+              <CardContent className="p-6 md:p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
+                <ul className="space-y-4 md:space-y-6 flex-1">
                   {cafeMenu.appetizers.map((item, j) => (
                     <li key={j} className="flex justify-between items-start gap-4 group/item">
                       <div className="flex-1">
-                        <p className="font-bold text-emerald-950 group-hover/item:text-emerald-600 transition-colors uppercase text-sm tracking-tight">{item.name}</p>
-                        {item.desc && <p className="text-[11px] text-gray-400 font-medium leading-tight mt-1">{item.desc}</p>}
+                        <p className="font-bold text-emerald-950 group-hover/item:text-emerald-600 transition-colors uppercase text-xs md:text-sm tracking-tight">{item.name}</p>
+                        {item.desc && <p className="text-[10px] md:text-[11px] text-gray-400 font-medium leading-tight mt-1">{item.desc}</p>}
                       </div>
                       <div className="text-right">
-                        <span className="font-black text-emerald-700 whitespace-nowrap text-sm font-outfit">
+                        <span className="font-black text-emerald-700 whitespace-nowrap text-xs md:text-sm font-outfit">
                           {typeof item.price === 'string' && item.price.includes('Coming') ?
                             <span className="text-[10px] bg-emerald-100 text-emerald-600 px-2 py-1 rounded-md uppercase tracking-widest font-bold">SOON</span> :
                             `IDR ${item.price}`
@@ -284,27 +284,28 @@ export function AddOnSection() {
 
         {/* Info Box - Enhanced Ultra Premium */}
         <ScrollReveal delay={300}>
-          <div className="mt-24 text-center">
-            <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-emerald-950 rounded-[3rem] p-8 md:p-10 max-w-4xl border border-white/10 shadow-3xl relative overflow-hidden group">
+          <div className="mt-16 md:mt-24 text-center">
+            <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-emerald-950 rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 max-w-4xl border border-white/10 shadow-3xl relative overflow-hidden group">
               {/* Shine effect */}
               <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-shine" />
 
-              <div className="bg-emerald-500 w-20 h-20 rounded-[1.5rem] flex items-center justify-center shadow-2xl relative z-10 flex-shrink-0 animate-float">
-                <Coffee className="h-10 w-10 text-white" />
+              <div className="bg-emerald-500 w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[1.5rem] flex items-center justify-center shadow-2xl relative z-10 flex-shrink-0 animate-float">
+                <Coffee className="h-8 w-8 md:h-10 md:w-10 text-white" />
               </div>
               <div className="text-center md:text-left relative z-10">
-                <p className="font-black text-white text-2xl font-outfit uppercase tracking-tight mb-2">Cafe tersedia setiap hari!</p>
-                <p className="text-emerald-100/60 font-medium text-lg leading-relaxed">
+                <p className="font-black text-white text-xl md:text-2xl font-outfit uppercase tracking-tight mb-2">Cafe tersedia setiap hari!</p>
+                <p className="text-emerald-100/60 font-medium text-base md:text-lg leading-relaxed">
                   Terbuka untuk umum. Nikmati suasana alam yang asri sambil menikmati hidangan kami.
                 </p>
               </div>
-              <div className="md:ml-auto relative z-10">
+              <div className="md:ml-auto relative z-10 w-full md:w-auto">
                 <a
                   href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin menanyakan meja di Cafe')}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="block"
                 >
-                  <Button variant="outline" className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-white rounded-xl h-14 px-8 font-black uppercase tracking-widest text-xs transition-all duration-300">
+                  <Button variant="outline" className="w-full md:w-auto border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-white rounded-xl h-14 px-8 font-black uppercase tracking-widest text-xs transition-all duration-300">
                     INFO CAFE
                   </Button>
                 </a>
