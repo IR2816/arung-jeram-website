@@ -20,17 +20,17 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-emerald-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-emerald-500/10 shadow-premium">
       <div className="container mx-auto px-4">
-        <nav className="flex h-16 items-center justify-between">
+        <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-xl shadow-md">
-              <Waves className="h-6 w-6 text-white" />
+          <Link href="/" className="flex items-center gap-3 font-bold group">
+            <div className="bg-emerald-950 p-2.5 rounded-2xl shadow-xl group-hover:bg-black transition-colors duration-300">
+              <Waves className="h-7 w-7 text-emerald-400" />
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-emerald-800 text-lg font-bold tracking-tighter">SEMBAR</span>
-              <span className="text-teal-600 text-[10px] font-bold tracking-[0.2em] -mt-1">ADVENTURE</span>
+            <div className="flex flex-col leading-none">
+              <span className="text-emerald-950 text-2xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
+              <span className="text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase">ADVENTURE</span>
             </div>
           </Link>
 

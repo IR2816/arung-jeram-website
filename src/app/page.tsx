@@ -16,8 +16,30 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { LandingAccordionItem } from '@/components/ui/interactive-image-accordion'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
-import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import NextImage from 'next/image'
+import { ArrowRight, ArrowRightLeft, MessageCircle, Clock, Users } from 'lucide-react'
+import { TestimonialCarousel } from '@/components/ui/testimonial'
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Andi Wijaya",
+    avatar: "https://i.pravatar.cc/150?u=andi",
+    description: "Luar biasa! Pemandunya sangat profesional dan jeramnya benar-benar memacu adrenalin. Sangat direkomendasikan!"
+  },
+  {
+    id: 2,
+    name: "Siti Aminah",
+    avatar: "https://i.pravatar.cc/150?u=siti",
+    description: "Pengalaman yang sangat menyenangkan untuk keluarga. Anak-anak saya sangat senang dan merasa aman."
+  },
+  {
+    id: 3,
+    name: "Budi Santoso",
+    avatar: "https://i.pravatar.cc/150?u=budi",
+    description: "Tempatnya asik, cafenya juga enak buat nongkrong setelah capek rafting. Pelayanan ramah banget!"
+  }
+]
 
 // Paket dari brosur dengan data konsisten
 const packages: PackageType[] = [
@@ -71,29 +93,93 @@ export default function Home() {
       <Navbar />
       <FloatingWhatsApp />
 
-      <main className="flex-1">
-        {/* ========== HERO SECTION ========== */}
-        <section id="home">
-          <div className="relative bg-black pt-16 sm:pt-18 md:pt-20">
-            <div className="container mx-auto px-4">
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 shadow-2xl group">
-                <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[24/6] lg:aspect-[24/5] overflow-hidden">
-                  <Image
-                    src="/images/Rafting/webp/Banner_sembar_adventure.webp"
-                    alt="Sembar Adventure"
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    priority
-                    sizes="100vw"
-                  />
-                  {/* Subtle glass overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                </div>
-              </div>
-            </div>
+      <main className="flex-1 mesh-gradient">
+        {/* ========== IMMERSIVE HERO SECTION ========== */}
+        <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
+          {/* Animated Background Mesh */}
+          <div className="absolute inset-0 z-0 opactiy-40">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)] animate-pulse" />
+            <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-emerald-500/20 rounded-full blur-[120px] animate-float" />
+            <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-teal-500/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '-2s' }} />
+          </div>
 
-            {/* Bottom fade into page */}
-            <div className="relative z-10 mt-14 h-20 bg-gradient-to-b from-transparent to-white" />
+          {/* Hero Content Wrapper */}
+          <div className="container mx-auto px-4 relative z-10 pt-32 pb-12">
+            <div className="max-w-6xl mx-auto">
+              {/* Text Intro Area */}
+              <div className="text-center mb-12 lg:mb-20">
+                <ScrollReveal>
+                  <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 mb-6 px-4 py-2 text-sm uppercase tracking-widest font-bold backdrop-blur-md">
+                    #1 Rafting Adventure in Bogor
+                  </Badge>
+                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter font-outfit uppercase">
+                    Arungi <span className="text-emerald-400">Adrenalin</span><br />Sungai Cisadane.
+                  </h1>
+                  <p className="text-emerald-100/60 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                    Rasakan sensasi menaklukkan jeram terbaik dengan standar keamanan kelas dunia dan pemandu profesional bersertifikat.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#paket">
+                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 h-16 text-lg rounded-2xl shadow-[0_20px_40px_-10px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold group">
+                        Lihat Paket Rafting
+                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </a>
+                    <a href="#booking">
+                      <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-10 h-16 text-lg rounded-2xl backdrop-blur-md transition-all duration-300 font-bold">
+                        Booking Sekarang
+                      </Button>
+                    </a>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Wide Hero Banner - DESKTOP ONLY */}
+              <div className="hidden lg:block">
+                <ScrollReveal delay={200}>
+                  <div className="relative aspect-[21/7] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group card-shine">
+                    <NextImage
+                      src="/images/Rafting/webp/Banner_sembar_adventure.webp"
+                      alt="Sembar Adventure Hero Full"
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 via-transparent to-transparent" />
+
+                    {/* Floating Info Overlay */}
+                    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+                      <div className="glass-dark px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl">
+                        <div className="flex gap-12">
+                          <div>
+                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Jalur Rafting</p>
+                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">12 KM</p>
+                          </div>
+                          <div className="w-px h-10 bg-white/10" />
+                          <div>
+                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Durasi Maks</p>
+                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">2.5 JAM</p>
+                          </div>
+                          <div className="w-px h-10 bg-white/10" />
+                          <div>
+                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Keamanan</p>
+                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">CERTIFIED</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Bottom Wave Decor */}
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-px">
+            <svg className="relative block w-[calc(100%+1.3px)] h-[80px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.47,113.84,122.2,125.44,188.47,116.32,246.33,108.33,288,81.16,321.39,56.44Z" className="fill-white"></path>
+            </svg>
           </div>
         </section>
 
@@ -114,6 +200,13 @@ export default function Home() {
                 <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
                   Dari arus tenang untuk keluarga hingga jeram menantang untuk pencari adrenalin. Temukan paket yang sesuai dengan keberanianmu.
                 </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <div className="flex items-center justify-center gap-3 mb-8 md:hidden animate-bounce text-emerald-700 font-bold text-sm bg-emerald-100/80 backdrop-blur-sm w-fit mx-auto px-6 py-3 rounded-full border-2 border-emerald-200 shadow-lg">
+                <ArrowRightLeft className="h-5 w-5" />
+                <span>GESER UNTUK PILIHAN PAKET</span>
               </div>
             </ScrollReveal>
 
@@ -140,6 +233,29 @@ export default function Home() {
 
         {/* ========== GALERI ========== */}
         <GallerySection />
+
+        {/* ========== TESTIMONIALS ========== */}
+        <section id="testimoni" className="py-20 md:py-32 bg-white overflow-hidden">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <div className="text-center mb-16">
+                <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 mb-4 px-4 py-2 text-xs uppercase tracking-widest font-bold">
+                  Testimoni
+                </Badge>
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                  Apa Kata Mereka?
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                  Cerita dari para petualang yang telah merasakan serunya Sungai Cisadane bersama Sembar Adventure.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <TestimonialCarousel testimonials={testimonials} className="py-10" />
+            </ScrollReveal>
+          </div>
+        </section>
 
         {/* ========== FAQ ========== */}
         <FAQSection />

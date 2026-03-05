@@ -77,41 +77,41 @@ const faqData = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-12 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="faq" className="relative py-24 md:py-32 overflow-hidden bg-emerald-50/50">
+      <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <Badge className="bg-purple-100 text-purple-700 border-purple-200 mb-4 px-4 py-2">
-              <HelpCircle className="h-4 w-4 mr-2" />
-              FAQ
+          <div className="text-center mb-20">
+            <Badge className="bg-emerald-950 text-emerald-400 border-emerald-800 mb-6 px-6 py-2 text-sm uppercase tracking-[0.3em] font-black">
+              Pusat Bantuan
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Pertanyaan Umum
+            <h2 className="text-4xl md:text-6xl font-black text-emerald-950 mb-6 tracking-tighter uppercase font-outfit">
+              PERTANYAAN <span className="text-emerald-500">UMUM</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Cari jawaban untuk pertanyaan Anda tentang rafting dan layanan kami
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
+              Temukan jawaban cepat untuk pertanyaan yang paling sering diajukan mengenai petualangan rafting kami.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {faqData.map((category, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <Card className="border border-purple-50 shadow-md hover:shadow-premium transition-all duration-300 bg-white overflow-hidden hover-lift">
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-6">
+            <ScrollReveal key={i} delay={i * 100} className={i === 2 ? 'md:col-span-2 lg:col-span-1' : ''}>
+              <Card className="border border-emerald-100 shadow-sm hover:shadow-premium transition-all duration-500 bg-white rounded-[2.5rem] overflow-hidden group hover-lift h-full flex flex-col">
+                <div className="bg-emerald-950 p-6 flex items-center justify-between group-hover:bg-black transition-colors">
                   <div className="flex items-center gap-3 text-white">
-                    <category.icon className="h-6 w-6" />
-                    <h3 className="text-lg font-bold">{category.category}</h3>
+                    <category.icon className="h-6 w-6 text-emerald-400" />
+                    <h3 className="text-sm font-black uppercase tracking-widest">{category.category}</h3>
                   </div>
+                  <HelpCircle className="h-5 w-5 text-emerald-800" />
                 </div>
-                <CardContent className="p-0">
+                <CardContent className="p-4 flex-grow">
                   <Accordion type="single" collapsible className="w-full">
                     {category.faqs.map((faq, j) => (
-                      <AccordionItem key={j} value={`${i}-${j}`} className="px-6 border-b last:border-0">
-                        <AccordionTrigger className="text-left font-medium text-gray-800 hover:text-emerald-600 py-4">
+                      <AccordionItem key={j} value={`${i}-${j}`} className="border-emerald-50 px-2 last:border-0">
+                        <AccordionTrigger className="text-left font-bold text-emerald-950 hover:text-emerald-500 py-4 text-xs uppercase tracking-wider">
                           {faq.q}
                         </AccordionTrigger>
-                        <AccordionContent className="text-gray-600 pb-4">
+                        <AccordionContent className="text-gray-600 pb-4 text-sm leading-relaxed font-medium">
                           {faq.a}
                         </AccordionContent>
                       </AccordionItem>
@@ -123,31 +123,33 @@ export function FAQSection() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA Banner */}
         <ScrollReveal delay={400}>
-          <div className="mt-12 text-center">
-            <Card className="inline-block border border-emerald-100 shadow-xl bg-white/80 backdrop-blur-md">
-              <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-4 rounded-2xl shadow-lg animate-bounce-gentle">
-                    <MessageCircle className="h-7 w-7 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-gray-800">Masih punya pertanyaan?</p>
-                    <p className="text-gray-600 text-sm">Chat langsung dengan tim kami</p>
-                  </div>
-                  <a
-                    href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full">
-                      Chat WhatsApp
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="mt-20">
+            <div className="bg-emerald-950 rounded-[3rem] p-10 md:p-16 relative overflow-hidden text-center max-w-5xl mx-auto">
+              {/* Abstract Decor */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -mr-32 -mt-32" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px] -ml-32 -mb-32" />
+
+              <div className="relative z-10">
+                <h3 className="text-white text-3xl md:text-5xl font-black mb-6 font-outfit uppercase leading-none">
+                  MASIH PUNYA <br /> <span className="text-emerald-400">PERTANYAAN?</span>
+                </h3>
+                <p className="text-emerald-100/60 font-medium mb-10 max-w-xl mx-auto text-lg">
+                  Tim kami siap menjawab segala kebutuhan dan keraguan Anda secara real-time.
+                </p>
+                <a
+                  href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-emerald-500 hover:bg-emerald-600 text-white h-16 px-12 text-lg rounded-2xl shadow-xl transition-all duration-300 font-black group uppercase tracking-widest">
+                    HUBUNGI KAMI SEKARANG
+                    <MessageCircle className="ml-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>

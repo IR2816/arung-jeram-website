@@ -1,8 +1,20 @@
 # 🌊 SEMBAR ADVENTURE - Website Arung Jeram Cisadane
 
-Website untuk **Sembar Adventure** - wahana arung jeram di Sungai Cisadane, Bogor.
+Website **Ultra-Modern & Premium** untuk Sembar Adventure - destinasi arung jeram terbaik di Sungai Cisadane, Bogor.
 
 <img src="public/images/Rafting/webp/Icon_sembar_adventure.webp" alt="Sembar Adventure" width="140" />
+
+## ✨ Modern UI Overhaul (2025)
+
+Website ini telah diperbarui secara total dengan standar desain web terkini:
+
+- **🌒 "Midnight Emerald" Design System**: Palet warna eksklusif yang memadukan Hijau Zamrud dalam, Teal, dan aksen emas/putih gading.
+- **🍱 Bento Grid Layout**: Implementasi tata letak modern bergaya Apple/Stripe pada bagian keunggulan dan galeri.
+- **💎 Glassmorphism 2.0**: Efek transparansi kaca yang halus dan premium pada seluruh antarmuka.
+- **🚀 Immersive Hero**: Bagian pembuka dramatis dengan tipografi besar dan banner sinematik.
+- **✨ Micro-interactions**: Efek hover interaktif, kilauan (shine), dan animasi scroll yang mulus.
+
+---
 
 ## 📍 Lokasi
 
@@ -20,63 +32,19 @@ Website untuk **Sembar Adventure** - wahana arung jeram di Sungai Cisadane, Bogo
 ## 🔷 Struktur Website
 
 ### 1. HOME (Landing Page)
-- **Hero Section** - Background foto rafting dengan headline "SEMBAR ADVENTURE"
-- **Tentang Singkat** - Deskripsi wahana arung jeram
-- **Paket Rafting** - 4 card paket (Mini, Family, Panorama, Adventure)
-- **Produk & Fasilitas** - Cafe, Camping, Paintball
-- **Gallery** - Grid foto aktivitas
-- **CTA Besar** - "Siap Berpetualang?"
+- **Immersive Hero** - Tipografi modern dengan Glass Stat Cards & Desktop Wide Banner.
+- **Bento Why Us** - Keunggulan layanan dalam tata letak Bento Grid yang dinamis.
+- **Premium Paket Rafting** - Kartu paket dengan 3D hover effect & shine.
+- **Gallery Bento** - Dokumentasi petualangan dengan masonry grid bergaya premium.
+- **FAQ Center** - Tanya jawab lengkap dengan kategori Midnight Emerald.
 
 ### 2. PAKET RAFTING
 
 | Paket | Jarak | Durasi | Harga | Min. Usia |
 |-------|-------|--------|-------|-----------|
-| Mini Rafting | 1 KM | 15 menit | Rp 600.000 | 6 tahun |
 | Family Trip | 5 KM | 1 jam 20 menit | Rp 650.000 | 7 tahun |
 | Panorama Trip | 7 KM | 80 menit | Rp 700.000 | 10 tahun |
 | Adventure Trip | 12 KM | 2,5 jam | Rp 850.000 | 12 tahun |
-
-*Harga per perahu (kapasitas 6 orang)*
-
-### 3. PRODUK & FASILITAS
-- Arung Jeram Cisadane
-- Sembar Sunset Cafe
-- Camping Ground
-- Paintball
-
-**Fasilitas:**
-- Titik kumpul rafting
-- Kolam renang
-- Lahan parkir luas
-- Lapangan outdoor
-
-### 4. ADD-ON SERVICES
-
-**🍽 Makan:**
-- Nasi Bakar - Rp 25.000
-- Nasi Goreng - Rp 25.000
-- Nasi Karedok - Rp 25.000
-
-**📸 Dokumentasi:**
-- 10 Foto - Rp 150.000
-- 1 Video Edit - Rp 200.000
-
-**🥥 Minuman:**
-- Es Kelapa Muda - Rp 15.000
-- Es Teh Manis - Rp 8.000
-
-### 5. BOOKING
-Form booking dengan redirect ke WhatsApp:
-- Nama
-- No HP
-- Pilih Paket
-- Jumlah Peserta
-- Tanggal
-- Add-on (opsional)
-
-### 6. KONTAK
-- (akan ditambahkan setelah channel resmi tersedia)
-- Google Maps embedded
 
 ---
 
@@ -90,13 +58,7 @@ cd webisite-arung-jeram
 # Install dependencies
 npm install
 
-# Setup environment
-cp .env.example .env
-
-# Setup database
-npm run db:push
-
-# Run development server
+# Setup development
 npm run dev
 ```
 
@@ -108,50 +70,15 @@ Buka [http://localhost:3000](http://localhost:3000)
 
 ```
 sembah-adventure/
-├── prisma/
-│   └── schema.prisma
-├── public/images/
-│   ├── Rafting/
-│   │   └── webp/
-│   ├── cafe/
-│   ├── gallery/
-│   └── packages/
+├── prisma/             # Schema & Database migrations
+├── public/images/      # Aset gambar terkompresi (.webp)
 ├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── globals.css
-│   │   └── page.tsx
-│   └── components/rafting/
-│       ├── Animations.tsx
-│       ├── AddOnSection.tsx
-│       ├── BookingSection.tsx
-│       ├── ContactSection.tsx
-│       ├── Footer.tsx
-│       ├── GallerySection.tsx
-│       ├── Navbar.tsx
-│       ├── PackageCard.tsx
-│       └── ProductSection.tsx
-├── .env.example
-├── package.json
+│   ├── app/            # Main pages & Global CSS (Emerald Theme)
+│   └── components/     
+│       └── rafting/    # Core UI components
+├── tailwind.config.ts  # Theme & Animation definitions
 └── README.md
 ```
-
----
-
-## ✨ Fitur
-
-| Fitur | Status |
-|-------|--------|
-| Landing Page | ✅ |
-| 4 Paket Rafting | ✅ |
-| Produk & Fasilitas | ✅ |
-| Add-On Services | ✅ |
-| Gallery | ✅ |
-| Form Booking | ✅ |
-| WhatsApp Integration | ✅ |
-| Google Maps | ✅ |
-| Animasi Scroll | ✅ |
-| Responsive Design | ✅ |
 
 ---
 
@@ -159,16 +86,18 @@ sembah-adventure/
 
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **UI:** shadcn/ui
-- **Database:** SQLite (Prisma)
+- **Styling:** Tailwind CSS 4 + Custom Premium Utilities
+- **Animation:** Framer Motion (ScrollReveal)
+- **UI:** shadcn/ui (Customized)
 - **Icons:** Lucide React
 
 ---
 
 ## 📞 Kontak
 
-Informasi kontak akan diperbarui setelah akun resmi siap.
+Informasi lebih lanjut bisa menghubungi:
+- **WhatsApp:** Admin Sembar Adventure
+- **Email:** sembaradventure@gmail.com
 
 ---
 

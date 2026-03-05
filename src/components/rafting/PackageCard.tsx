@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Clock, Users, ArrowRight, MessageCircle } from 'lucide-react'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
 
 export interface PackageType {
@@ -30,11 +30,11 @@ export function PackageCard({ pkg }: PackageCardProps) {
   const whatsappUrl = getWhatsAppUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}*. Bisa info lebih lanjut?`)
 
   return (
-    <Card className="group overflow-hidden border border-emerald-50 bg-white hover:border-emerald-200 shadow-md hover:shadow-premium transition-all duration-500 hover:-translate-y-2 flex flex-col h-full rounded-2xl sm:rounded-3xl max-w-[400px] mx-auto">
+    <Card className="group overflow-hidden border-0 bg-white shadow-md hover:shadow-premium transition-all duration-500 rounded-[2.5rem] flex flex-col h-full max-w-[400px] mx-auto card-shine hover-lift">
       {/* Upper Section: Image with Dynamic Height */}
-      <div className="relative h-[clamp(140px,25vh,240px)] sm:h-56 md:h-64 overflow-hidden">
+      <div className="relative h-[clamp(160px,28vh,280px)] sm:h-64 md:h-72 overflow-hidden">
         {pkg.imageUrl ? (
-          <Image
+          <NextImage
             src={pkg.imageUrl}
             alt={pkg.name}
             fill
@@ -42,34 +42,39 @@ export function PackageCard({ pkg }: PackageCardProps) {
           />
         ) : (
           <div className="w-full h-full bg-emerald-100 flex items-center justify-center">
-            <Users className="h-8 w-8 sm:h-10 sm:w-10 text-emerald-300" />
+            <Users className="h-10 w-10 text-emerald-300" />
           </div>
         )}
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
 
         {/* Badges */}
-        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex flex-col gap-2">
           {pkg.featured && (
-            <Badge className="bg-amber-400 hover:bg-amber-500 text-black border-0 shadow-lg font-extrabold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[8px] sm:text-[10px] uppercase tracking-wider animate-pulse">
-              Recommeded
+            <Badge className="bg-emerald-500 text-white border-0 shadow-lg font-black px-3 py-1 rounded-full text-[10px] uppercase tracking-wider animate-glow">
+              Recommended
             </Badge>
           )}
         </div>
 
-        {/* Bottom Info Overlay - Dynamic Font Sizes */}
-        <div className="absolute bottom-2 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 flex justify-between items-end">
+        {/* Price Tag Floating */}
+        <div className="absolute top-4 right-4 glass-dark px-3 py-1.5 rounded-2xl border border-white/20 text-white font-bold text-xs">
+          Rp {pkg.price.toLocaleString('id-ID')}
+        </div>
+
+        {/* Bottom Info Overlay */}
+        <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
           <div className="flex flex-col">
-            <h3 className="text-white font-bold text-base sm:text-2xl drop-shadow-md leading-tight group-hover:text-emerald-300 transition-colors">
+            <h3 className="text-white font-black text-2xl drop-shadow-lg tracking-tight group-hover:text-emerald-400 transition-colors uppercase font-outfit">
               {pkg.name}
             </h3>
-            <div className="flex items-center gap-1.5 sm:gap-2 mt-1 sm:mt-2">
-              <span className="flex items-center text-[9px] sm:text-xs text-emerald-50 bg-emerald-600/40 backdrop-blur-md px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg border border-white/10">
-                <Clock className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
+            <div className="flex items-center gap-2 mt-2">
+              <span className="flex items-center text-[10px] text-emerald-50 bg-white/10 backdrop-blur-md px-2 py-1 rounded-lg border border-white/10 font-bold uppercase tracking-wider">
+                <Clock className="h-3 w-3 mr-1" />
                 {pkg.duration}
               </span>
-              <span className="flex items-center text-[9px] sm:text-xs text-emerald-50 bg-emerald-600/40 backdrop-blur-md px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg border border-white/10">
+              <span className="flex items-center text-[10px] text-emerald-50 bg-white/10 backdrop-blur-md px-2 py-1 rounded-lg border border-white/10 font-bold uppercase tracking-wider">
                 {pkg.distance}
               </span>
             </div>
@@ -77,60 +82,50 @@ export function PackageCard({ pkg }: PackageCardProps) {
         </div>
       </div>
 
-      {/* Main Content - Compressed Padding */}
-      <CardContent className="p-3 sm:p-6 flex-grow flex flex-col">
-        <div className="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-4">
-          <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border-emerald-100 flex items-center gap-1 px-1.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-xs font-semibold">
-            <Users className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+      {/* Main Content */}
+      <CardContent className="p-6 flex-grow flex flex-col">
+        <div className="flex items-center gap-2 mb-4">
+          <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border-emerald-100 flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wide">
+            <Users className="h-3.5 w-3.5" />
             <span>{pkg.capacity}</span>
           </Badge>
-          <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-100 px-1.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-xs font-semibold">
+          <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wide">
             Min. {pkg.minAge} th
           </Badge>
         </div>
 
-        <p className="text-gray-600 text-[11px] sm:text-sm mb-3 sm:mb-6 leading-relaxed line-clamp-2 italic">
-          "{pkg.description}"
+        <p className="text-gray-500 text-sm mb-6 leading-relaxed line-clamp-2">
+          {pkg.description}
         </p>
 
-        {/* Highlights - Dynamic visibility and spacing */}
-        <div className="space-y-1.5 sm:space-y-3 mb-3 sm:mb-6 overflow-hidden">
-          <span className="text-[8px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Fasilitas</span>
-          <div className="grid grid-cols-1 gap-1 sm:gap-2">
+        {/* Highlights */}
+        <div className="space-y-4 mb-6">
+          <span className="text-[10px] font-black text-emerald-900/30 uppercase tracking-[0.2em] block">Inclusions</span>
+          <div className="grid grid-cols-1 gap-3">
             {pkg.highlights.map((highlight, i) => (
-              <div key={i} className={`flex items-center gap-1.5 sm:gap-2 ${i > 1 ? 'hidden xs:flex' : 'flex'}`}>
-                <div className="h-3.5 w-3.5 sm:h-5 sm:w-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                  <span className="text-emerald-600 text-[8px] sm:text-[10px] font-bold">✓</span>
+              <div key={i} className="flex items-center gap-3">
+                <div className="h-5 w-5 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 border border-emerald-100">
+                  <span className="text-emerald-600 text-[10px] font-bold">✓</span>
                 </div>
-                <span className="text-[10px] sm:text-sm text-gray-700 truncate">{highlight}</span>
+                <span className="text-sm text-gray-700 font-medium">{highlight}</span>
               </div>
             ))}
           </div>
         </div>
       </CardContent>
 
-      {/* Footer / CTA Area - Compact Height */}
-      <CardFooter className="p-3 sm:p-6 pt-0 flex flex-col gap-2 sm:gap-4 mt-auto">
-        <div className="w-full flex items-center justify-between p-2.5 sm:p-4 rounded-xl bg-gray-50/80 border border-gray-100/50">
-          <div>
-            <span className="text-[8px] sm:text-[10px] text-gray-400 font-bold uppercase tracking-wider block mb-0">Biaya Perahu</span>
-            <span className="text-emerald-700 font-bold text-base sm:text-2xl font-inter">
-              Rp {pkg.price.toLocaleString('id-ID')}
-            </span>
-          </div>
-          <span className="text-emerald-600/50 font-bold text-[8px] sm:text-xs px-2 py-0.5 bg-emerald-50 rounded-md">All-In</span>
-        </div>
-
-        <div className="flex flex-col gap-1.5 sm:gap-3 w-full">
+      {/* Footer / CTA */}
+      <CardFooter className="p-6 pt-0 flex flex-col gap-3 mt-auto">
+        <div className="flex flex-col gap-2 w-full">
           <a href="#booking" className="w-full group/btn">
-            <Button className="w-full h-9 sm:h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg sm:rounded-xl shadow-md hover:shadow-emerald-200 transition-all font-bold flex items-center justify-center gap-1.5 text-[10px] sm:text-base">
+            <Button className="w-full h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-xl transition-all duration-300 font-black flex items-center justify-center gap-2 text-base uppercase tracking-wider">
               Amankan Slot
-              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 transition-transform" />
+              <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
             </Button>
           </a>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-            <Button variant="ghost" className="w-full h-8 sm:h-12 text-emerald-600 hover:bg-emerald-50 rounded-lg sm:rounded-xl font-semibold flex items-center justify-center gap-1.5 text-[10px] sm:text-base">
-              <MessageCircle className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+            <Button variant="ghost" className="w-full h-12 text-emerald-800 hover:bg-emerald-50 rounded-2xl font-bold flex items-center justify-center gap-2 text-sm">
+              <MessageCircle className="h-5 w-5" />
               Tanya Pemandu
             </Button>
           </a>
