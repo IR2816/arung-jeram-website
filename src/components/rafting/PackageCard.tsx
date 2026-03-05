@@ -122,18 +122,26 @@ export function PackageCard({ pkg }: PackageCardProps) {
       {/* Footer / CTA */}
       <CardFooter className="p-6 pt-0 flex flex-col gap-3 mt-auto">
         <div className="flex flex-col gap-2 w-full">
-          <a href="#booking" className="w-full group/btn" onClick={handleSelect}>
-            <Button className="w-full h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-xl transition-all duration-300 font-black flex items-center justify-center gap-2 text-base uppercase tracking-wider">
+          <Button
+            asChild
+            className="w-full h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-xl transition-all duration-300 font-black flex items-center justify-center gap-2 text-base uppercase tracking-wider group/btn cursor-pointer"
+            onClick={handleSelect}
+          >
+            <a href="#booking">
               Amankan Slot
               <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
-            </Button>
-          </a>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-            <Button variant="ghost" className="w-full h-12 text-emerald-800 hover:bg-emerald-50 rounded-2xl font-bold flex items-center justify-center gap-2 text-sm">
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="ghost"
+            className="w-full h-12 text-emerald-800 hover:bg-emerald-50 rounded-2xl font-bold flex items-center justify-center gap-2 text-sm cursor-pointer"
+          >
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-5 w-5" />
               Tanya Pemandu
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </CardFooter>
     </Card>
