@@ -21,27 +21,31 @@ export function ContactForm() {
     message: '',
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
+    const message = `Halo Sembar Adventure,
 
-      if (response.ok) {
-        setSuccess(true)
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-        setTimeout(() => setSuccess(false), 3000)
-      }
-    } catch (error) {
-      console.error('Contact error:', error)
-    } finally {
-      setLoading(false)
-    }
+Saya ingin mengirimkan pesan:
+
+👤 Nama: ${formData.name}
+📧 Email: ${formData.email}
+📱 No HP: ${formData.phone}
+📌 Subjek: ${formData.subject}
+
+💬 Pesan:
+${formData.message}
+
+_Dikirim dari website sembaradventure.com_`
+
+    const url = getWhatsAppUrl(message)
+    window.open(url, '_blank', 'noopener,noreferrer')
+
+    setSuccess(true)
+    setLoading(false)
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setTimeout(() => setSuccess(false), 3000)
   }
 
   const contactInfo = [
