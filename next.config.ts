@@ -24,16 +24,7 @@ const securityHeaders = [
   { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains; preload" },
 ];
 
-const defaultDistDir = process.env.NODE_ENV === "development" ? ".next-build-dev" : ".next-build-prod";
-
 const nextConfig: NextConfig = {
-  // Allow overriding output dir to avoid Windows lock/unlink issues during repeated builds.
-  // Use a separate dist dir in development so `next dev` does not lock production build artifacts.
-  distDir: process.env.NEXT_DIST_DIR || defaultDistDir,
-  // Standalone build can fail on some Windows setups due to copyfile locks.
-  // Enable it explicitly in CI/deploy with NEXT_STANDALONE=true.
-  ...(process.env.NEXT_STANDALONE === "true" ? { output: "standalone" as const } : {}),
-  
   // Image optimization
   images: {
     remotePatterns: [

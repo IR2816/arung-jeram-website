@@ -38,41 +38,43 @@ export function BookingDialog({ pkg, open, onOpenChange }: BookingDialogProps) {
   })
   const [success, setSuccess] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!pkg || !date) return
 
     setLoading(true)
     
-    try {
-      const response = await fetch('/api/bookings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          packageId: pkg.id,
-          customerName: formData.name,
-          customerEmail: formData.email,
-          customerPhone: formData.phone,
-          bookingDate: date.toISOString(),
-          numberOfPeople: parseInt(formData.people),
-          notes: formData.notes,
-        }),
-      })
+    // Generate WhatsApp Message
+    const dateStr = format(date, 'EEEE, d MMMM yyyy', { locale: id })
+    const totalPrice = pkg.price * parseInt(formData.people || '1')
+    
+    const message = `🌊 BOOKING SEMBAR ADVENTURE
 
-      if (response.ok) {
-        setSuccess(true)
-        setTimeout(() => {
-          onOpenChange(false)
-          setSuccess(false)
-          setFormData({ name: '', email: '', phone: '', people: '1', notes: '' })
-          setDate(undefined)
-        }, 2000)
-      }
-    } catch (error) {
-      console.error('Booking error:', error)
-    } finally {
-      setLoading(false)
-    }
+👤 Nama: ${formData.name}
+📧 Email: ${formData.email}
+📱 No HP: ${formData.phone}
+📦 Paket: ${pkg.name}
+👥 Jumlah Peserta: ${formData.people} orang
+📅 Tanggal: ${dateStr}
+💰 Est. Total: Rp ${totalPrice.toLocaleString('id-ID')}
+
+📝 Catatan:
+${formData.notes || '-'}
+
+_Dikirim dari website sembaradventure.com_`
+
+    // Open WhatsApp
+    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6285811531446'}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
+    
+    setSuccess(true)
+    setLoading(false)
+    
+    setTimeout(() => {
+      onOpenChange(false)
+      setSuccess(false)
+      setFormData({ name: '', email: '', phone: '', people: '1', notes: '' })
+      setDate(undefined)
+    }, 2000)
   }
 
   if (!pkg) return null
