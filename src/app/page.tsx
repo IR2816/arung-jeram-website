@@ -204,9 +204,11 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <div className="flex items-center justify-center gap-3 mb-8 md:hidden animate-bounce text-emerald-700 font-bold text-sm bg-emerald-100/80 backdrop-blur-sm w-fit mx-auto px-6 py-3 rounded-full border-2 border-emerald-200 shadow-lg">
-                <ArrowRightLeft className="h-5 w-5" />
-                <span>GESER UNTUK PILIHAN PAKET</span>
+              <div className="flex items-center justify-center gap-3 mb-10 md:hidden animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="flex items-center gap-2 bg-emerald-950 text-white px-6 py-3 rounded-2xl shadow-premium border border-white/10 group active:scale-95 transition-all">
+                  <ArrowRightLeft className="h-4 w-4 text-emerald-400 group-hover:rotate-180 transition-transform duration-500" />
+                  <span className="text-[10px] font-black uppercase tracking-widest">Geser & Pilih Paket</span>
+                </div>
               </div>
             </ScrollReveal>
 

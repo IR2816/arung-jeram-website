@@ -20,7 +20,7 @@ const accordionItems = [
     {
         id: 3,
         title: 'Camping Ground',
-        imageUrl: '/images/gallery/river-scenery.webp',
+        imageUrl: '/images/gallery/camping-ground.jpg',
         description: 'Bermalam di bawah bintang tepi sungai.',
     },
     {
@@ -48,9 +48,12 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
     return (
         <div
             className={`
-        relative h-[300px] sm:h-[450px] rounded-2xl overflow-hidden cursor-pointer
-        transition-all duration-700 ease-in-out
-        ${isActive ? 'w-[280px] sm:w-[400px]' : 'w-[50px] sm:w-[70px]'}
+        relative rounded-[2rem] overflow-hidden cursor-pointer
+        transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+        ${isActive
+                    ? 'w-full lg:w-[400px] h-[400px] lg:h-[450px]'
+                    : 'w-full lg:w-[70px] h-[80px] lg:h-[450px]'
+                }
       `}
             onMouseEnter={onMouseEnter}
             onClick={onMouseEnter}
@@ -61,35 +64,38 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
                 alt={item.title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             />
 
             {/* Dark overlay for better text readability */}
-            <div className={`absolute inset-0 bg-black/40 transition-opacity duration-500 ${isActive ? 'opacity-20' : 'opacity-60'}`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${isActive ? 'opacity-80' : 'opacity-60'}`}></div>
 
             {/* Caption Text */}
             <div
                 className={`
-          absolute inset-0 flex flex-col items-center justify-end p-6 text-white
+          absolute inset-0 flex flex-col items-center justify-center lg:justify-end p-6 text-white
           transition-all duration-300 ease-in-out
         `}
             >
-                <span
-                    className={`
-            font-bold whitespace-nowrap transition-all duration-500
+                <div className={`flex flex-col items-center transition-all duration-500 ${isActive ? 'translate-y-0' : 'translate-y-2 lg:-rotate-90 lg:-translate-y-20'}`}>
+                    <span
+                        className={`
+            font-black tracking-tight whitespace-nowrap transition-all duration-500 uppercase font-outfit
             ${isActive
-                            ? 'text-xl sm:text-2xl mb-2 translate-y-0 opacity-100'
-                            : 'text-lg rotate-90 mb-20 sm:mb-24 opacity-80'
-                        }
+                                ? 'text-2xl sm:text-3xl mb-2 opacity-100'
+                                : 'text-lg lg:text-xl opacity-80'
+                            }
           `}
-                >
-                    {item.title}
-                </span>
+                    >
+                        {item.title}
+                    </span>
 
-                {isActive && (
-                    <p className="text-xs sm:text-sm text-gray-200 text-center animate-fade-in line-clamp-2">
-                        {item.description}
-                    </p>
-                )}
+                    {isActive && (
+                        <p className="text-sm md:text-base text-emerald-100/80 text-center animate-in fade-in slide-in-from-bottom-2 duration-500 max-w-xs line-clamp-2 font-medium">
+                            {item.description}
+                        </p>
+                    )}
+                </div>
             </div>
         </div>
     );
@@ -105,45 +111,49 @@ export function LandingAccordionItem() {
     };
 
     return (
-        <section className="bg-white py-12 md:py-24">
+        <section id="fasilitas" className="bg-white py-12 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
                     {/* Left Side: Text Content */}
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tighter">
-                            Petualangan Lengkap di Satu Tempat
+                        <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+                            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            Premium Facilities
+                        </div>
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase font-outfit">
+                            Satu Tempat <br />
+                            <span className="text-emerald-500">Sejuta</span> Cerita.
                         </h2>
-                        <p className="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
-                            Dari jeram yang memacu adrenalin hingga ketenangan berkemah di tepi sungai, Sembar Adventure menyediakan segalanya untuk liburan tak terlupakan.
+                        <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                            Dari jeram yang memacu adrenalin hingga ketenangan berkemah di tepi sungai, kami menyediakan segalanya untuk liburan tak terlupakan.
                         </p>
-                        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div className="mt-10 flex flex-row gap-4 justify-center lg:justify-start">
                             <a
                                 href="#paket"
-                                className="inline-block bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-700 transition-colors duration-300"
+                                className="inline-block bg-emerald-950 text-white font-black px-8 h-16 flex items-center justify-center rounded-2xl shadow-xl hover:bg-black transition-all duration-300 hover:scale-105 active:scale-95 text-sm uppercase tracking-wider"
                             >
-                                Lihat Paket
+                                Jelajahi Paket
                             </a>
                             <a
                                 href="#booking"
-                                className="inline-block bg-white text-gray-900 border border-gray-200 font-semibold px-8 py-3 rounded-lg shadow-sm hover:bg-gray-50 transition-colors duration-300"
+                                className="inline-block bg-white text-emerald-950 border border-emerald-950/10 font-black px-8 h-16 flex items-center justify-center rounded-2xl shadow-sm hover:bg-emerald-50 transition-all duration-300 hover:scale-105 active:scale-95 text-sm uppercase tracking-wider"
                             >
-                                Booking Sekarang
+                                Reservasi
                             </a>
                         </div>
                     </div>
 
                     {/* Right Side: Image Accordion */}
                     <div className="w-full lg:w-1/2">
-                        <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 overflow-x-auto p-4 scrollbar-hide snap-x">
+                        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 w-full max-w-[500px] lg:max-w-none mx-auto">
                             {accordionItems.map((item, index) => (
-                                <div key={item.id} className="snap-center">
-                                    <AccordionItem
-                                        item={item}
-                                        isActive={index === activeIndex}
-                                        onMouseEnter={() => handleItemHover(index)}
-                                    />
-                                </div>
+                                <AccordionItem
+                                    key={item.id}
+                                    item={item}
+                                    isActive={index === activeIndex}
+                                    onMouseEnter={() => handleItemHover(index)}
+                                />
                             ))}
                         </div>
                     </div>
@@ -152,3 +162,4 @@ export function LandingAccordionItem() {
         </section>
     );
 }
+
