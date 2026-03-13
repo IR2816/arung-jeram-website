@@ -42,6 +42,14 @@ const addOnOptions = [
   { id: 'minum', name: 'Es Kelapa Muda', price: 15000 },
 ]
 
+const documentationOptions = [
+  { id: 'none', name: 'Tidak, Terima Kasih' },
+  { id: 'foto', name: '10 Foto Premium (Rp 150.000)' },
+  { id: 'video', name: 'Video Clip Cinematic (Rp 200.000)' },
+  { id: 'lengkap', name: 'Paket Lengkap Foto & Video (Rp 300.000)' },
+]
+
+
 export function BookingSection() {
   const [date, setDate] = useState<Date>()
   const [formData, setFormData] = useState({
@@ -49,6 +57,7 @@ export function BookingSection() {
     phone: '',
     package: '',
     participants: '6',
+    documentation: 'none',
     notes: '',
     addons: [] as string[],
   })
@@ -66,6 +75,9 @@ export function BookingSection() {
   const generateWhatsAppMessage = () => {
     const packageName = selectedPackage?.name || 'Paket tidak dipilih'
     const dateStr = date ? format(date, 'EEEE, d MMMM yyyy', { locale: id }) : 'Tanggal belum dipilih'
+    const docOption = documentationOptions.find(d => d.id === formData.documentation)
+    const docText = docOption && docOption.id !== 'none' ? `\n📸 Dokumentasi: ${docOption.name}` : ''
+
     const addonsStr = formData.addons.length > 0
       ? `\nAddon: ${formData.addons.join(', ')}`
       : ''
@@ -76,7 +88,7 @@ export function BookingSection() {
 📱 No HP: ${formData.phone}
 📦 Paket: ${packageName}
 👥 Jumlah Peserta: ${formData.participants} orang
-📅 Tanggal: ${dateStr}${addonsStr}
+📅 Tanggal: ${dateStr}${docText}${addonsStr}
 
 📝 Catatan:
 ${formData.notes || '-'}
@@ -265,6 +277,25 @@ _Dikirim dari website sembaradventure.com_`
                           className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold"
                         />
                       </div>
+                    </div>
+
+                    {/* Dokumentasi */}
+                    <div className="md:col-span-2 space-y-3">
+                      <Label className="text-emerald-950 font-black text-[10px] uppercase tracking-widest pl-1">
+                        Dokumentasi Premium
+                      </Label>
+                      <Select value={formData.documentation} onValueChange={(value) => setFormData({ ...formData, documentation: value })}>
+                        <SelectTrigger className="border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold">
+                          <SelectValue placeholder="Pilih paket dokumentasi" />
+                        </SelectTrigger>
+                        <SelectContent className="rounded-2xl border-emerald-100 font-bold">
+                          {documentationOptions.map((opt) => (
+                            <SelectItem key={opt.id} value={opt.id}>
+                              <span className="font-black text-emerald-900">{opt.name}</span>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 

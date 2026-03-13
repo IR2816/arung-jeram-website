@@ -27,7 +27,7 @@ export const Contact2 = ({
   title = "Hubungi Kami",
   description = "Kami siap menjawab pertanyaan, request informasi, atau kebutuhan kolaborasi. Tulis pesanmu dan kami akan respon via WhatsApp.",
   address = "Desa Putat Nutug, Ciseeng, Bogor",
-  phone = "+62 812-3456-7890",
+  phone,
   email = "sembaradventure@gmail.com",
   web = { label: "Instagram @sembar_adventure", url: "https://www.instagram.com/sembar_adventure/" },
   whatsappGreeting = "Halo Sembar Adventure, saya ingin bertanya:",
@@ -37,6 +37,8 @@ export const Contact2 = ({
   const [emailInput, setEmailInput] = React.useState("")
   const [subject, setSubject] = React.useState("")
   const [message, setMessage] = React.useState("")
+
+  const displayPhone = phone || formatPhoneNumber(getWhatsAppNumber())
 
   const wrapperClassName = cn(embedded ? "" : "py-32", className)
   const Wrapper: React.ElementType = embedded ? "div" : "section"
@@ -78,7 +80,7 @@ export const Contact2 = ({
                 </li>
                 <li>
                   <span className="font-bold">WhatsApp: </span>
-                  {phone}
+                  {displayPhone}
                 </li>
                 <li>
                   <span className="font-bold">Email: </span>

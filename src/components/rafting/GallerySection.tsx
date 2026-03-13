@@ -8,12 +8,12 @@ const galleryImages = [
   { src: '/images/Rafting/webp/9.webp', alt: 'Arung Jeram Seru', span: true },
   { src: '/images/Rafting/webp/7.webp', alt: 'Tim Rafting', span: false },
   { src: '/images/Rafting/webp/2.webp', alt: 'Pemandangan Sungai', span: false },
-  { src: '/images/Rafting/webp/11.webp', alt: 'Pemandu Lokal', span: false },
+  { src: '/images/Rafting/webp/4.webp', alt: 'Camping Ground', span: false },
   { src: '/images/Rafting/webp/1.webp', alt: 'Rafting Keluarga', span: false },
   { src: '/images/cafe/warkop-gallery.webp', alt: 'Sembar Sunset Cafe', span: true },
   { src: '/images/Rafting/webp/10.webp', alt: 'Rafting Adventure', span: false },
   { src: '/images/Rafting/webp/3.webp', alt: 'Petualangan Seru', span: false },
-  { src: '/images/Rafting/webp/4.webp', alt: 'Clip Video', span: false },
+  { src: '/images/Rafting/webp/11.webp', alt: 'Pemandu Lokal', span: false },
 ]
 
 export function GallerySection() {
