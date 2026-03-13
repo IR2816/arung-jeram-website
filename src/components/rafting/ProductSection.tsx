@@ -71,8 +71,8 @@ export function ProductSection() {
           {products.map((product, i) => (
             <div key={i} className="min-w-[240px] md:min-w-0 snap-start flex-shrink-0">
               <ScrollReveal delay={i * 100}>
-                <Card className="group border border-emerald-50 shadow-md hover:shadow-premium transition-all duration-500 bg-white overflow-hidden h-full hover-lift">
-                  <div className="relative h-40 sm:h-48 overflow-hidden">
+                <Card className="group border border-emerald-50 shadow-md hover:shadow-premium transition-all duration-500 bg-white overflow-hidden h-full hover-lift rounded-3xl">
+                  <div className="relative h-32 sm:h-48 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.title}
@@ -80,18 +80,18 @@ export function ProductSection() {
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className={`absolute top-3 left-3 bg-gradient-to-r ${product.color} p-1.5 rounded-lg`}>
-                      <product.icon className="h-4 w-4 text-white" />
+                    <div className={`absolute top-2 left-2 md:top-3 md:left-3 bg-gradient-to-r ${product.color} p-1.5 rounded-lg`}>
+                      <product.icon className="h-3 w-3 md:h-4 md:w-4 text-white" />
                     </div>
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h3 className="text-white font-bold text-base sm:text-lg">{product.title}</h3>
+                    <div className="absolute bottom-2 left-2 md:bottom-3 md:left-3 right-3">
+                      <h3 className="text-white font-bold text-sm sm:text-lg">{product.title}</h3>
                     </div>
                   </div>
-                  <CardContent className="p-4 sm:p-5">
-                    <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">{product.description}</p>
+                  <CardContent className="p-3 sm:p-5">
+                    <p className="text-gray-600 text-[10px] sm:text-sm mb-2 sm:mb-4 line-clamp-2 md:line-clamp-none">{product.description}</p>
                     <ul className="space-y-0.5 sm:space-y-1">
                       {product.features.map((feature, j) => (
-                        <li key={j} className="text-[11px] sm:text-sm text-gray-700 flex items-center gap-1.5 sm:gap-2">
+                        <li key={j} className="text-[9px] sm:text-sm text-gray-700 flex items-center gap-1 sm:gap-2">
                           <span className="text-emerald-500">•</span>
                           {feature}
                         </li>

@@ -180,15 +180,15 @@ export function AddOnSection() {
           {/* Gancaran Ringan Card */}
           <ScrollReveal delay={100}>
             <Card className="border border-emerald-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden group h-full flex flex-col rounded-[2.5rem]">
-              <div className="relative bg-emerald-950 p-8 text-white text-center overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-16 -mt-16" />
+              <div className="relative bg-emerald-950 p-6 md:p-8 text-white text-center overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-12 -mt-12 md:-mr-16 md:-mt-16" />
                 <div className="relative z-10">
-                  <span className="text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">Appetizers</span>
-                  <h3 className="text-2xl font-black font-outfit uppercase tracking-tight">GANCARAN RINGAN</h3>
+                  <span className="text-emerald-400 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-1 md:mb-2 block">Appetizers</span>
+                  <h3 className="text-xl md:text-2xl font-black font-outfit uppercase tracking-tight">GANCARAN RINGAN</h3>
                 </div>
               </div>
-              <CardContent className="p-6 md:p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
-                <ul className="space-y-4 md:space-y-6 flex-1">
+              <CardContent className="p-4 md:p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
+                <ul className="space-y-3 md:space-y-6 flex-1">
                   {cafeMenu.appetizers.map((item, j) => (
                     <li key={j} className="flex justify-between items-start gap-4 group/item">
                       <div className="flex-1">
@@ -213,15 +213,15 @@ export function AddOnSection() {
           {/* Panganan Kenyang Card */}
           <ScrollReveal delay={150}>
             <Card className="border border-emerald-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden group h-full flex flex-col rounded-[2.5rem] transform md:-translate-y-4">
-              <div className="relative bg-emerald-600 p-8 text-white text-center overflow-hidden">
+              <div className="relative bg-emerald-600 p-6 md:p-8 text-white text-center overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
                 <div className="relative z-10">
-                  <span className="text-emerald-100 text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">Main Course</span>
-                  <h3 className="text-2xl font-black font-outfit uppercase tracking-tight">PANGANAN KENYANG</h3>
+                  <span className="text-emerald-100 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-1 md:mb-2 block">Main Course</span>
+                  <h3 className="text-xl md:text-2xl font-black font-outfit uppercase tracking-tight">PANGANAN KENYANG</h3>
                 </div>
               </div>
-              <CardContent className="p-8 flex-1 flex flex-col bg-white">
-                <ul className="space-y-6 flex-1">
+              <CardContent className="p-4 md:p-8 flex-1 flex flex-col bg-white">
+                <ul className="space-y-3 md:space-y-6 flex-1">
                   {cafeMenu.mainCourse.map((item, j) => (
                     <li key={j} className="flex justify-between items-start gap-4 group/item">
                       <div className="flex-1">
@@ -251,15 +251,15 @@ export function AddOnSection() {
           {/* Tirta Penyejuk Card */}
           <ScrollReveal delay={200}>
             <Card className="border border-emerald-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden group h-full flex flex-col rounded-[2.5rem]">
-              <div className="relative bg-emerald-950 p-8 text-white text-center overflow-hidden">
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl -ml-16 -mb-16" />
+              <div className="relative bg-emerald-950 p-6 md:p-8 text-white text-center overflow-hidden">
+                <div className="absolute bottom-0 left-0 w-24 md:w-32 h-24 md:h-32 bg-teal-500/10 rounded-full blur-2xl -ml-12 -mb-12 md:-ml-16 md:-mb-16" />
                 <div className="relative z-10">
-                  <span className="text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">Beverages</span>
-                  <h3 className="text-2xl font-black font-outfit uppercase tracking-tight">TIRTA PENYEJUK</h3>
+                  <span className="text-emerald-400 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-1 md:mb-2 block">Beverages</span>
+                  <h3 className="text-xl md:text-2xl font-black font-outfit uppercase tracking-tight">TIRTA PENYEJUK</h3>
                 </div>
               </div>
-              <CardContent className="p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
-                <ul className="space-y-6 flex-1">
+              <CardContent className="p-4 md:p-8 flex-1 flex flex-col bg-gradient-to-b from-white to-emerald-50/30">
+                <ul className="space-y-3 md:space-y-6 flex-1">
                   {cafeMenu.beverages.map((item, j) => (
                     <li key={j} className="flex justify-between items-start gap-4 group/item">
                       <div className="flex-1">

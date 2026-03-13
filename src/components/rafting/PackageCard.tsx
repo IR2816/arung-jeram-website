@@ -37,7 +37,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
   return (
     <Card className="group overflow-hidden border-0 bg-white shadow-premium transition-all duration-500 rounded-[2rem] md:rounded-[2.5rem] flex flex-col h-full max-w-[400px] mx-auto card-shine hover-lift">
       {/* Upper Section: Image with Dynamic Height */}
-      <div className="relative h-[250px] sm:h-64 md:h-72 overflow-hidden">
+      <div className="relative h-[180px] sm:h-[220px] md:h-72 overflow-hidden">
         {pkg.imageUrl ? (
           <NextImage
             src={pkg.imageUrl}
@@ -88,7 +88,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
       </div>
 
       {/* Main Content */}
-      <CardContent className="p-5 md:p-6 flex-grow flex flex-col">
+      <CardContent className="p-4 md:p-6 flex-grow flex flex-col">
         <div className="flex items-center gap-2 mb-4">
           <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border-emerald-100 flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wide">
             <Users className="h-3 w-3" />
@@ -99,7 +99,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
           </Badge>
         </div>
 
-        <p className="text-gray-500 text-sm mb-6 leading-relaxed line-clamp-2 font-medium">
+        <p className="text-gray-500 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed line-clamp-2 md:line-clamp-none font-medium">
           {pkg.description}
         </p>
 
@@ -120,11 +120,11 @@ export function PackageCard({ pkg }: PackageCardProps) {
       </CardContent>
 
       {/* Footer / CTA */}
-      <CardFooter className="p-5 md:p-6 pt-0 flex flex-col gap-3 mt-auto">
+      <CardFooter className="p-4 md:p-6 pt-0 flex flex-col gap-3 md:gap-4 mt-auto">
         <div className="flex flex-col gap-2 w-full">
           <Button
             asChild
-            className="w-full h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-premium transition-all duration-300 font-black flex items-center justify-center gap-2 text-sm uppercase tracking-wider group/btn cursor-pointer"
+            className="w-full h-12 md:h-14 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-premium transition-all duration-300 font-black flex items-center justify-center gap-2 text-xs md:text-sm uppercase tracking-wider group/btn cursor-pointer"
             onClick={handleSelect}
           >
             <a href="#booking">

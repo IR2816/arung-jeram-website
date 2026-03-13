@@ -74,13 +74,13 @@ export function SafetySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {safetyFeatures.map((feature, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Card className="relative group border border-emerald-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden h-full rounded-[2.5rem] p-4 card-shine">
+              <Card className="relative group border border-emerald-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden h-full rounded-[2rem] md:rounded-[2.5rem] p-3 md:p-4 card-shine">
                 {/* Decorative float element */}
                 <div className="absolute -top-12 -right-12 w-24 h-24 bg-emerald-50 rounded-full blur-2xl group-hover:bg-emerald-100 transition-colors duration-500" />
 
-                <CardContent className="pt-8 pb-6 md:pt-10 md:pb-8 px-6 text-center relative z-10">
-                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center mx-auto mb-6 md:mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg shadow-emerald-500/10 border border-emerald-100/50 ${feature.color === 'emerald' ? 'bg-emerald-950 text-emerald-400' : 'bg-emerald-500 text-white'}`}>
-                    <feature.icon className="h-8 w-8 md:h-10 md:w-10" />
+                <CardContent className="pt-6 pb-5 md:pt-10 md:pb-8 px-4 md:px-6 text-center relative z-10">
+                  <div className={`w-14 h-14 md:w-20 md:h-20 rounded-2xl md:rounded-[2rem] flex items-center justify-center mx-auto mb-4 md:mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg shadow-emerald-500/10 border border-emerald-100/50 ${feature.color === 'emerald' ? 'bg-emerald-950 text-emerald-400' : 'bg-emerald-500 text-white'}`}>
+                    <feature.icon className="h-6 w-6 md:h-10 md:w-10" />
                   </div>
 
                   <h3 className="font-black text-xl text-emerald-950 mb-4 font-outfit uppercase tracking-tight leading-tight">

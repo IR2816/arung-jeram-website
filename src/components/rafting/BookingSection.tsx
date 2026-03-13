@@ -187,7 +187,7 @@ _Dikirim dari website sembaradventure.com_`
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Budi Santoso"
-                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold placeholder:text-gray-300"
+                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 font-bold placeholder:text-gray-300 text-xs md:text-sm"
                         />
                       </div>
                     </div>
@@ -205,7 +205,7 @@ _Dikirim dari website sembaradventure.com_`
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="08xxxxxxxxxx"
-                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold placeholder:text-gray-300"
+                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 font-bold placeholder:text-gray-300 text-xs md:text-sm"
                         />
                       </div>
                     </div>
@@ -216,10 +216,10 @@ _Dikirim dari website sembaradventure.com_`
                         Pilih Paket Petualangan
                       </Label>
                       <Select value={formData.package} onValueChange={(value) => setFormData({ ...formData, package: value })}>
-                        <SelectTrigger className="border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold">
+                        <SelectTrigger className="border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 font-bold text-xs md:text-sm">
                           <SelectValue placeholder="Pilih paket rafting" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-2xl border-emerald-100 font-bold">
+                        <SelectContent className="rounded-xl md:rounded-2xl border-emerald-100 font-bold text-xs md:text-sm">
                           {packages.map((pkg) => (
                             <SelectItem key={pkg.id} value={pkg.id}>
                               <div className="flex items-center gap-2">
@@ -242,7 +242,7 @@ _Dikirim dari website sembaradventure.com_`
                           <Button
                             variant="outline"
                             className={cn(
-                              'w-full justify-start text-left font-bold border-emerald-100 rounded-2xl h-14 bg-emerald-50/30',
+                              'w-full justify-start text-left font-bold border-emerald-100 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 text-xs md:text-sm',
                               !date && 'text-gray-300 font-bold'
                             )}
                           >
@@ -274,21 +274,21 @@ _Dikirim dari website sembaradventure.com_`
                           max="50"
                           value={formData.participants}
                           onChange={(e) => setFormData({ ...formData, participants: e.target.value })}
-                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold"
+                          className="pl-12 border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 font-bold text-xs md:text-sm"
                         />
                       </div>
                     </div>
 
                     {/* Dokumentasi */}
-                    <div className="md:col-span-2 space-y-3">
+                    <div className="md:col-span-2 space-y-2 md:space-y-3">
                       <Label className="text-emerald-950 font-black text-[10px] uppercase tracking-widest pl-1">
                         Dokumentasi Premium
                       </Label>
                       <Select value={formData.documentation} onValueChange={(value) => setFormData({ ...formData, documentation: value })}>
-                        <SelectTrigger className="border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-2xl h-14 bg-emerald-50/30 font-bold">
+                        <SelectTrigger className="border-emerald-100 focus:border-emerald-500 focus:ring-emerald-500 rounded-xl md:rounded-2xl h-12 md:h-14 bg-emerald-50/30 font-bold text-xs md:text-sm">
                           <SelectValue placeholder="Pilih paket dokumentasi" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-2xl border-emerald-100 font-bold">
+                        <SelectContent className="rounded-xl md:rounded-2xl border-emerald-100 font-bold text-xs md:text-sm">
                           {documentationOptions.map((opt) => (
                             <SelectItem key={opt.id} value={opt.id}>
                               <span className="font-black text-emerald-900">{opt.name}</span>
@@ -300,10 +300,10 @@ _Dikirim dari website sembaradventure.com_`
                   </div>
 
                   {/* Submit Button */}
-                  <div className="mt-12">
+                  <div className="mt-8 md:mt-12">
                     <Button
                       onClick={handleBooking}
-                      className="w-full h-16 bg-emerald-950 hover:bg-black text-white rounded-2xl shadow-xl transition-all duration-300 group font-black uppercase tracking-widest"
+                      className="w-full h-14 md:h-16 bg-emerald-950 hover:bg-black text-white rounded-xl md:rounded-2xl shadow-xl transition-all duration-300 group font-black uppercase tracking-widest text-xs md:text-sm"
                       disabled={!formData.name || !formData.phone || !formData.package || !date}
                     >
                       Kirim Reservasi WhatsApp
