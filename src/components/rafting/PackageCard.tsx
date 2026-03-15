@@ -27,7 +27,7 @@ interface PackageCardProps {
 }
 
 export function PackageCard({ pkg }: PackageCardProps) {
-  const whatsappUrl = getWhatsAppUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}*. Bisa info lebih lanjut?`)
+  const whatsappUrl = getWhatsAppUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}* seharga Rp ${pkg.price.toLocaleString('id-ID')}. Mohon info lebih lanjut untuk booking.`)
 
   const handleSelect = () => {
     // Dispatch custom event for BookingSection to pick up

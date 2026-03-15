@@ -9,6 +9,9 @@ import { AddOnSection } from '@/components/rafting/AddOnSection'
 import { ContactSection } from '@/components/rafting/ContactSection'
 import { SafetySection } from '@/components/rafting/SafetySection'
 import { FAQSection } from '@/components/rafting/FAQSection'
+import { InstagramSection } from '@/components/rafting/InstagramSection'
+import { SocialProofSection } from '@/components/rafting/SocialProofSection'
+import { PreparationSection } from '@/components/rafting/PreparationSection'
 import { WhyChooseUsSection } from '@/components/rafting/WhyChooseUsSection'
 import { FloatingWhatsApp } from '@/components/rafting/FloatingWhatsApp'
 import { ScrollReveal } from '@/components/rafting/Animations'
@@ -183,6 +186,9 @@ export default function Home() {
           </div>
         </section>
 
+      {/* ========== SOCIAL PROOF ========== */}
+      <SocialProofSection />
+
         {/* ========== WHY CHOOSE US ========== */}
         <WhyChooseUsSection />
 
@@ -233,8 +239,14 @@ export default function Home() {
         {/* ========== ADD-ON & CAFE MENU ========== */}
         <AddOnSection />
 
+        {/* ========== PERSIAPAN ========== */}
+        <PreparationSection />
+
         {/* ========== GALERI ========== */}
         <GallerySection />
+
+        {/* ========== INSTAGRAM FEED ========== */}
+        <InstagramSection />
 
         {/* ========== TESTIMONIALS ========== */}
         <section id="testimoni" className="py-20 md:py-32 bg-white overflow-hidden">

@@ -11,7 +11,26 @@ export function FloatingWhatsApp() {
   const whatsappUrl = getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya tentang paket rafting!')
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100]">
+    <>
+      {/* Sticky Mobile Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-200 p-3 flex items-center justify-between z-[90] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+        <div className="flex flex-col">
+          <span className="text-xs text-gray-500 font-bold uppercase">Mulai Petualangan</span>
+          <span className="text-sm font-black text-gray-900">Booking Rafting</span>
+        </div>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-xl shadow-lg px-6 h-10 text-sm font-bold">
+            Chat WA
+            <MessageCircle className="ml-2 h-4 w-4" />
+          </Button>
+        </a>
+      </div>
+
+    <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-[100]">
       {/* Popup */}
       {isOpen && (
         <div className="absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl p-5 w-72 animate-scale-in border border-gray-100">
@@ -69,5 +88,6 @@ export function FloatingWhatsApp() {
         </svg>
       </button>
     </div>
+    </>
   )
 }
