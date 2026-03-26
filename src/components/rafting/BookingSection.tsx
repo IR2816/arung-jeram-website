@@ -30,9 +30,9 @@ import { ScrollReveal } from './Animations'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
 
 const packages = [
-  { id: 'family', name: 'Family Trip', price: 650000, duration: '1 jam 20 menit', distance: '5 KM' },
-  { id: 'panorama', name: 'Panorama Trip', price: 700000, duration: '80 menit', distance: '7 KM' },
-  { id: 'adventure', name: 'Adventure Trip', price: 850000, duration: '2,5 jam', distance: '12 KM' },
+  { id: 'fun', name: 'Fun Rafting', price: 75000, duration: '~30 menit', distance: '1 KM' },
+  { id: 'panorama', name: 'Panorama Trip', price: 150000, duration: '80 menit', distance: '7 KM' },
+  { id: 'adventure', name: 'Adventure Trip', price: 220000, duration: '2,5 jam', distance: '10 KM' },
 ]
 
 const addOnOptions = [

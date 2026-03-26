@@ -18,6 +18,8 @@ export interface PackageType {
   minAge: number
   capacity: string
   highlights: string[]
+  inclusion?: string
+  exclusion?: string
   imageUrl: string | null
   featured?: boolean
 }

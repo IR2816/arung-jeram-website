@@ -17,8 +17,8 @@ import { ScrollReveal } from './Animations'
 const trustPoints = [
   {
     icon: Shield,
-    title: 'Safety First',
-    desc: 'Standar keamanan internasional dengan peralatan berkualitas dan tim rescue terlatih',
+    title: 'Peralatan Berkualitas',
+    desc: 'Peralatan arung jeram berkualitas tinggi dengan tim rescue terlatih untuk keselamatan Anda',
     color: 'from-blue-400 to-cyan-500'
   },
   {
@@ -42,10 +42,10 @@ const trustPoints = [
 ]
 
 const differentiators = [
-  { label: 'Jalur Rafting', value: '3 Pilihan', desc: 'Family Trip, Panorama Trip, dan Adventure Trip' },
-  { label: 'Lintasan Terpanjang', value: '12 KM', desc: 'Adventure Trip untuk adrenalin maksimal' },
+  { label: 'Jalur Rafting', value: '3 Pilihan', desc: 'Fun Rafting, Panorama Trip, dan Adventure Trip' },
+  { label: 'Lintasan Terpanjang', value: '10 KM', desc: 'Adventure Trip untuk adrenalin maksimal' },
   { label: 'Fasilitas', value: 'Lengkap', desc: 'Cafe, camping, paintball, dan outbound' },
-  { label: 'Jam Operasional', value: 'Fleksibel', desc: 'Buka 6 hari dalam seminggu' },
+  { label: 'Jam Operasional', value: '09:00 - 15:00', desc: 'Buka 6 hari dalam seminggu' },
 ]
 
 export function WhyChooseUsSection() {
@@ -78,9 +78,9 @@ export function WhyChooseUsSection() {
                   <div className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center mb-6">
                     <Shield className="h-8 w-8 text-emerald-400" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Safety First Integration</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Keselamatan & Kenyamanan</h3>
                   <p className="text-emerald-100/80 text-lg leading-relaxed max-w-md">
-                    Standar keamanan internasional dengan peralatan berkualitas tinggi dan tim rescue profesional yang tersertifikasi. Prioritas kami adalah keselamatan Anda di setiap arus.
+                    Peralatan arung jeram berkualitas tinggi dan tim rescue profesional yang tersertifikasi. Prioritas kami adalah keselamatan Anda di setiap arus.
                   </p>
                 </div>
                 <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4">
@@ -89,7 +89,7 @@ export function WhyChooseUsSection() {
                       <div key={n} className="w-10 h-10 rounded-full border-2 border-emerald-900 bg-emerald-700 flex items-center justify-center text-[10px] font-bold">Rescuer</div>
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-emerald-200">Trained Guides</span>
+                  <span className="text-sm font-medium text-emerald-200">Pemandu Bersertifikat</span>
                 </div>
               </div>
             </div>

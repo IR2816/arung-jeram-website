@@ -1,4 +1,4 @@
-const DEFAULT_WHATSAPP_NUMBER = '6281234567890' // Placeholder dummy number
+const DEFAULT_WHATSAPP_NUMBER = '6281319217399'
 
 export function getWhatsAppNumber(): string {
   return (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
