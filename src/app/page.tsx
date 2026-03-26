@@ -46,16 +46,18 @@ const testimonials = [
 // Paket dari brosur dengan data konsisten
 const packages: PackageType[] = [
   {
-    id: 'family',
-    name: 'Family Trip',
-    slug: 'family-trip',
-    description: 'Petualangan arung jeram yang sempurna untuk keluarga. Nikmati kebersamaan dengan pemandangan alam yang indah di Sungai Cisadane.',
-    price: 650000,
-    duration: '1 jam 20 menit',
-    distance: '5 KM',
+    id: 'fun',
+    name: 'Fun Rafting',
+    slug: 'fun-rafting',
+    description: 'Petualangan seru di Lembah Cisadane. Jarak 1 KM dengan arus yang sempurna untuk semua tingkat kemampuan.',
+    price: 75000,
+    duration: '~30 menit',
+    distance: '1 KM',
     minAge: 7,
     capacity: '6 orang/perahu',
-    highlights: ['Pemandangan Hutan C4', 'Jeram Bagol', 'Ideal untuk keluarga'],
+    highlights: ['Kawasan Wisata Lembah Cisadane', 'Jeram LemCis', 'Waterpark Lembah Cisadane'],
+    inclusion: 'Kawasan Wisata Lembah Cisadane, Jeram LemCis, Waterpark Lembah Cisadane, Peralatan Arung Jeram, Pemandu, Transport, Toilet, Mushola, Parkiran',
+    exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/5.webp',
     featured: true,
   },
@@ -63,13 +65,15 @@ const packages: PackageType[] = [
     id: 'panorama',
     name: 'Panorama Trip',
     slug: 'panorama-trip',
-    description: 'Nikmati keindahan jalur panorama Lembah Cisadane dengan kombinasi jeram seru dan pemandangan alam.',
-    price: 700000,
+    description: 'Nikmati pemandangan Green Canyon di jalur 7 KM Lembah Cisadane dengan arus yang menantang namun aman.',
+    price: 150000,
     duration: '80 menit',
     distance: '7 KM',
     minAge: 10,
     capacity: '6 orang/perahu',
-    highlights: ['Batu Burut', 'Jeram Lemcis (Lembah Cisadane)', 'View panorama lembah'],
+    highlights: ['View Panorama Green Canyon', 'Jeram LemCis', 'Waterpark Lembah Cisadane'],
+    inclusion: 'View Panorama Green Canyon, Pemandu, Transport, Waterpark Lembah Cisadane, Peralatan Arung Jeram, Makan Siang 1 Kali, Toilet, Mushola, Parkiran',
+    exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/9.webp',
     featured: true,
   },
@@ -77,13 +81,15 @@ const packages: PackageType[] = [
     id: 'adventure',
     name: 'Adventure Trip',
     slug: 'adventure-trip',
-    description: 'Tantangan penuh adrenalin dengan jeram yang menegangkan. Lintasan terpanjang untuk pencari sensasi sejati!',
-    price: 850000,
+    description: 'Tantangan penuh adrenalin dengan jeram-jeram mendebarkan di 10 KM jalur Cisadane/Caringin. Untuk pencari sensasi sejati!',
+    price: 220000,
     duration: '2,5 jam',
-    distance: '12 KM',
+    distance: '10 KM',
     minAge: 12,
     capacity: '6 orang/perahu',
-    highlights: ['Jeram Kuda', 'Jeram Naga', 'Untuk pencari adrenalin'],
+    highlights: ['Jeram Blender', 'Jeram Dam', 'Jeram Kuda', 'Kerinduan'],
+    inclusion: 'Jeram Blender, Jeram Dam, Jeram Kuda, Kerinduan, Pemandu, Peralatan Arung Jeram, Saung, Mushola, Toilet, Transport, Makan Siang 1 Kali, Snack, Es Kelapa',
+    exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/10.webp',
     featured: false,
   },
@@ -118,7 +124,7 @@ export default function Home() {
                     Arungi <span className="text-emerald-400">Adrenalin</span><br />Sungai Cisadane.
                   </h1>
                   <p className="text-emerald-100/60 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                    Rasakan sensasi menaklukkan jeram terbaik dengan standar keamanan kelas dunia dan pemandu profesional bersertifikat.
+                    Rasakan sensasi menaklukkan jeram terbaik dengan peralatan berkualitas tinggi dan pemandu profesional bersertifikat.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#paket">

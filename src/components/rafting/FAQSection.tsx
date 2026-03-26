@@ -57,11 +57,11 @@ const faqData = [
     faqs: [
       {
         q: 'Jam operasional rafting?',
-        a: 'Jam operasional rafting 11:00 - 15:00 WIB. Disarankan datang minimal 1 jam sebelum slot yang diinginkan.'
+        a: 'Jam Operasional: 09:00 - 15:00 WIB. Disarankan datang minimal 1 jam sebelum slot yang diinginkan.'
       },
       {
         q: 'Berapa lama waktu untuk satu sesi rafting?',
-        a: 'Tergantung paket yang dipilih: Family Trip 1 jam 20 menit, Panorama Trip 80 menit, Adventure Trip 2,5 jam.'
+        a: 'Tergantung paket yang dipilih: Fun Rafting ~30 menit, Panorama Trip 80 menit, Adventure Trip 2,5 jam.'
       },
       {
         q: 'Berapa orang dalam satu perahu?',
