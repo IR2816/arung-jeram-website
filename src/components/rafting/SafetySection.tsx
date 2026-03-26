@@ -65,7 +65,7 @@ export function SafetySection() {
               KESELAMATAN ADALAH <br /> <span className="text-emerald-500">PRIORITAS UTAMA</span>
             </h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-base md:text-lg font-medium leading-relaxed">
-              Kami menetapkan standar keamanan yang melampaui ekspektasi. Setiap detik petualangan Anda dilindungi oleh sistem keamanan berlapis dan tim profesional.
+              Kami mengutamakan keselamatan dengan peralatan berkualitas dan tim profesional bersertifikat. Setiap detik petualangan Anda dilindungi dengan sistem keamanan berlapis.
             </p>
           </div>
         </ScrollReveal>
