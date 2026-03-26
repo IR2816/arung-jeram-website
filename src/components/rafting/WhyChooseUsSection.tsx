@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import {
   Shield,
-  Award,
   Users,
   MapPin,
   Clock,
@@ -32,12 +31,6 @@ const trustPoints = [
     title: 'Lokasi Strategis',
     desc: 'Di kawasan Lembah Cisadane yang asri, mudah dijangkau dari Jakarta & Bogor',
     color: 'from-purple-400 to-pink-500'
-  },
-  {
-    icon: Award,
-    title: 'Harga Transparan',
-    desc: 'Tanpa biaya tersembunyi. Harga sudah termasuk perahu, peralatan, dan pemandu',
-    color: 'from-amber-400 to-orange-500'
   },
 ]
 
@@ -68,7 +61,7 @@ export function WhyChooseUsSection() {
         </ScrollReveal>
 
         {/* Bento Grid Features */}
-        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-4 md:gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-auto md:grid-rows-2 gap-4 md:gap-6 mb-16">
           {/* Main Feature - Spans 2x2 on desktop */}
           <ScrollReveal className="md:col-span-2 md:row-span-2">
             <div className="h-full relative overflow-hidden rounded-3xl bg-emerald-900 text-white p-8 group">
@@ -78,9 +71,9 @@ export function WhyChooseUsSection() {
                   <div className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center mb-6">
                     <Shield className="h-8 w-8 text-emerald-400" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Keselamatan & Kenyamanan</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Peralatan Berkualitas & Keamanan</h3>
                   <p className="text-emerald-100/80 text-lg leading-relaxed max-w-md">
-                    Peralatan arung jeram berkualitas tinggi dan tim rescue profesional yang tersertifikasi. Prioritas kami adalah keselamatan Anda di setiap arus.
+                    Peralatan arung jeram berkualitas tinggi dan tim rescue profesional bersertifikat. Keselamatan Anda adalah prioritas utama di setiap arus.
                   </p>
                 </div>
                 <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4">
@@ -96,7 +89,7 @@ export function WhyChooseUsSection() {
           </ScrollReveal>
 
           {/* Feature 2 - Local Expertise */}
-          <ScrollReveal className="md:col-span-2 md:row-span-1">
+          <ScrollReveal className="md:col-span-1 md:row-span-1">
             <div className="h-full relative overflow-hidden rounded-3xl bg-white border border-emerald-100 p-8 shadow-sm hover:shadow-premium transition-all duration-300 group">
               <div className="flex items-start justify-between">
                 <div>
@@ -119,20 +112,6 @@ export function WhyChooseUsSection() {
               </div>
               <h4 className="font-bold text-teal-900">Lokasi Strategis</h4>
               <p className="text-teal-700/70 text-xs mt-1 leading-relaxed">Kawasan hijau Lembah Cisadane yang menenangkan.</p>
-            </div>
-          </ScrollReveal>
-
-          {/* Feature 4 - Pricing */}
-          <ScrollReveal className="md:col-span-1 md:row-span-1">
-            <div className="h-full relative overflow-hidden rounded-3xl bg-emerald-600 text-white p-6 flex flex-col justify-between group">
-              <div className="absolute bottom-0 right-0 opacity-10 transform translate-x-4 translate-y-4">
-                <Award className="w-24 h-24" />
-              </div>
-              <h4 className="font-bold text-white text-lg">Harga Transparan</h4>
-              <div className="mt-4">
-                <span className="text-2xl font-black">All-In</span>
-                <p className="text-emerald-100 text-[10px] mt-1">Tanpa biaya tambahan tersembunyi.</p>
-              </div>
             </div>
           </ScrollReveal>
         </div>

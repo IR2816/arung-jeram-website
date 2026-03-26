@@ -46,16 +46,20 @@ const testimonials = [
 // Paket dari brosur dengan data konsisten
 const packages: PackageType[] = [
   {
-    id: 'fun',
+    id: 'fun-rafting',
     name: 'Fun Rafting',
     slug: 'fun-rafting',
     description: 'Petualangan seru di Lembah Cisadane. Jarak 1 KM dengan arus yang sempurna untuk semua tingkat kemampuan.',
     price: 75000,
-    duration: '~30 menit',
+    duration: '1 jam',
     distance: '1 KM',
-    minAge: 7,
+    minAge: 5,
     capacity: '6 orang/perahu',
-    highlights: ['Kawasan Wisata Lembah Cisadane', 'Jeram LemCis', 'Waterpark Lembah Cisadane'],
+    highlights: [
+      'Kawasan Wisata Lembah Cisadane',
+      'Jeram LemCis',
+      'Waterpark Lembah Cisadane'
+    ],
     inclusion: 'Kawasan Wisata Lembah Cisadane, Jeram LemCis, Waterpark Lembah Cisadane, Peralatan Arung Jeram, Pemandu, Transport, Toilet, Mushola, Parkiran',
     exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/5.webp',
@@ -67,11 +71,15 @@ const packages: PackageType[] = [
     slug: 'panorama-trip',
     description: 'Nikmati pemandangan Green Canyon di jalur 7 KM Lembah Cisadane dengan arus yang menantang namun aman.',
     price: 150000,
-    duration: '80 menit',
+    duration: '1 jam 30 menit',
     distance: '7 KM',
     minAge: 10,
     capacity: '6 orang/perahu',
-    highlights: ['View Panorama Green Canyon', 'Jeram LemCis', 'Waterpark Lembah Cisadane'],
+    highlights: [
+      'View Panorama Green Canyon',
+      'Jeram LemCis',
+      'Waterpark Lembah Cisadane'
+    ],
     inclusion: 'View Panorama Green Canyon, Pemandu, Transport, Waterpark Lembah Cisadane, Peralatan Arung Jeram, Makan Siang 1 Kali, Toilet, Mushola, Parkiran',
     exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/9.webp',
@@ -83,11 +91,16 @@ const packages: PackageType[] = [
     slug: 'adventure-trip',
     description: 'Tantangan penuh adrenalin dengan jeram-jeram mendebarkan di 10 KM jalur Cisadane/Caringin. Untuk pencari sensasi sejati!',
     price: 220000,
-    duration: '2,5 jam',
+    duration: '2 jam 30 menit',
     distance: '10 KM',
     minAge: 12,
-    capacity: '6 orang/perahu',
-    highlights: ['Jeram Blender', 'Jeram Dam', 'Jeram Kuda', 'Kerinduan'],
+    capacity: '6 orang minimal',
+    highlights: [
+      'Jeram Blender',
+      'Jeram Dam',
+      'Jeram Kuda',
+      'Kerinduan'
+    ],
     inclusion: 'Jeram Blender, Jeram Dam, Jeram Kuda, Kerinduan, Pemandu, Peralatan Arung Jeram, Saung, Mushola, Toilet, Transport, Makan Siang 1 Kali, Snack, Es Kelapa',
     exclusion: 'Foto dan Video (250rb/perahu)',
     imageUrl: '/images/Rafting/webp/10.webp',
