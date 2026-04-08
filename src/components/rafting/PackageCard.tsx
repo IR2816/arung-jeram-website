@@ -96,9 +96,11 @@ export function PackageCard({ pkg }: PackageCardProps) {
             <Users className="h-3 w-3" />
             <span>{pkg.capacity}</span>
           </Badge>
-          <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wide">
-            Min. {pkg.minAge} th
-          </Badge>
+          {pkg.minAge > 0 && (
+            <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wide">
+              Min. {pkg.minAge} th
+            </Badge>
+          )}
         </div>
 
         <p className="text-gray-500 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed line-clamp-2 md:line-clamp-none font-medium">

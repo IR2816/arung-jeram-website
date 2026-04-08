@@ -21,15 +21,15 @@ const faqData = [
     faqs: [
       {
         q: 'Bagaimana cara booking rafting?',
-        a: 'Anda bisa booking langsung via WhatsApp dengan mengisi form booking di website ini, atau datang langsung ke lokasi. Kami merekomendasikan booking H-1 atau H-2 sebelum tanggal rafting untuk memastikan ketersediaan slot.'
+        a: 'Isi form booking di website ini, lalu kami akan konfirmasi via WhatsApp. Bisa juga langsung chat admin. Pembayaran melalui transfer BCA sesuai paket yang dipilih.'
       },
       {
         q: 'Apakah bisa bayar di tempat?',
-        a: 'Ya, pembayaran bisa dilakukan di tempat (cash/transfer). Untuk booking grup besar atau corporate, kami menerima DP 50% untuk mengunci jadwal.'
+        a: 'Untuk booking, kami menerima DP atau pelunasan via transfer BCA. Detail rekening akan diinformasikan saat konfirmasi. Untuk grup besar, DP 50% diperlukan untuk mengunci jadwal.'
       },
       {
         q: 'Metode pembayaran apa saja yang diterima?',
-        a: 'Kami menerima tunai, transfer bank (BCA, Mandiri, BNI), dan e-wallet (GoPay, OVO, Dana).'
+        a: 'Pembayaran dilakukan melalui transfer bank BCA. Detail rekening akan dikirim saat konfirmasi booking via WhatsApp.'
       },
     ]
   },
@@ -57,19 +57,19 @@ const faqData = [
     faqs: [
       {
         q: 'Jam operasional rafting?',
-        a: 'Jam Operasional: 09:00 - 15:00 WIB. Disarankan datang minimal 1 jam sebelum slot yang diinginkan.'
+        a: 'Sembar Adventure buka setiap hari. Hubungi admin via WhatsApp untuk konfirmasi slot keberangkatan yang tersedia.'
       },
       {
         q: 'Berapa lama waktu untuk satu sesi rafting?',
-        a: 'Tergantung paket yang dipilih: Fun Rafting ~30 menit, Panorama Trip 80 menit, Adventure Trip 2,5 jam.'
+        a: 'Tergantung paket yang dipilih: Fun Rafting 15 menit (1 KM), Family Trip ±1 jam (5 KM), Adventure Trip ±2,5 jam (12 KM), Longtrip 2,5 jam (12 KM, rute Ciampea → Putat Nutug).'
       },
       {
         q: 'Berapa orang dalam satu perahu?',
-        a: 'Kapasitas perahu adalah 6 orang termasuk pemandu. Jika grup Anda lebih dari 5 orang, akan menggunakan lebih dari satu perahu.'
+        a: '1 perahu berkapasitas 6 orang termasuk pemandu (skipper). Jika peserta lebih dari 6 orang, akan menggunakan lebih dari satu perahu.'
       },
       {
         q: 'Apa saja yang perlu dibawa?',
-        a: 'Bawa pakaian ganti, handuk, sandal jepit/sepatu air, sunscreen, dan topi. Jangan lupa dry bag untuk HP dan barang berharga.'
+        a: 'Bawa pakaian ganti, handuk, dan sandal jepit atau sepatu air. Dry bag untuk HP dan barang berharga disarankan (opsional, bisa beli di tempat).'
       },
     ]
   },

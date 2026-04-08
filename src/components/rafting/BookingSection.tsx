@@ -30,23 +30,16 @@ import { ScrollReveal } from './Animations'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
 
 const packages = [
-  { id: 'fun', name: 'Fun Rafting', price: 75000, duration: '~30 menit', distance: '1 KM' },
-  { id: 'panorama', name: 'Panorama Trip', price: 150000, duration: '80 menit', distance: '7 KM' },
-  { id: 'adventure', name: 'Adventure Trip', price: 220000, duration: '2,5 jam', distance: '10 KM' },
-]
-
-const addOnOptions = [
-  { id: 'dokumentasi-foto', name: 'Dokumentasi 10 Foto', price: 150000 },
-  { id: 'dokumentasi-video', name: 'Dokumentasi Video', price: 200000 },
-  { id: 'makan', name: 'Paket Makan', price: 25000 },
-  { id: 'minum', name: 'Es Kelapa Muda', price: 15000 },
+  { id: 'fun-rafting', name: 'Fun Rafting', price: 100000, duration: '15 menit', distance: '1 KM' },
+  { id: 'family-trip', name: 'Family Trip', price: 150000, duration: '±1 jam', distance: '5 KM' },
+  { id: 'adventure-trip', name: 'Adventure Trip', price: 250000, duration: '±2,5 jam', distance: '12 KM' },
+  { id: 'longtrip', name: 'Longtrip', price: 300000, duration: '2,5 jam', distance: '12 KM' },
 ]
 
 const documentationOptions = [
   { id: 'none', name: 'Tidak, Terima Kasih' },
-  { id: 'foto', name: '10 Foto Premium (Rp 150.000)' },
-  { id: 'video', name: 'Video Clip Cinematic (Rp 200.000)' },
-  { id: 'lengkap', name: 'Paket Lengkap Foto & Video (Rp 300.000)' },
+  { id: 'foto-video', name: 'Foto & Video — Rp 200.000/perahu (Fun, Family, Adventure)' },
+  { id: 'foto-video-longtrip', name: 'Foto & Video — Rp 300.000/perahu (Longtrip)' },
 ]
 
 
@@ -59,7 +52,6 @@ export function BookingSection() {
     participants: '6',
     documentation: 'none',
     notes: '',
-    addons: [] as string[],
   })
 
   useEffect(() => {
@@ -78,17 +70,13 @@ export function BookingSection() {
     const docOption = documentationOptions.find(d => d.id === formData.documentation)
     const docText = docOption && docOption.id !== 'none' ? `\n📸 Dokumentasi: ${docOption.name}` : ''
 
-    const addonsStr = formData.addons.length > 0
-      ? `\nAddon: ${formData.addons.join(', ')}`
-      : ''
-
     const message = `🌊 BOOKING SEMBAR ADVENTURE
 
 👤 Nama: ${formData.name}
 📱 No HP: ${formData.phone}
 📦 Paket: ${packageName}
 👥 Jumlah Peserta: ${formData.participants} orang
-📅 Tanggal: ${dateStr}${docText}${addonsStr}
+📅 Tanggal: ${dateStr}${docText}
 
 📝 Catatan:
 ${formData.notes || '-'}
@@ -108,15 +96,6 @@ _Dikirim dari website sembaradventure.com_`
     window.open(getWhatsAppUrl(message), '_blank', 'noopener,noreferrer')
   }
 
-  const toggleAddon = (addonId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      addons: prev.addons.includes(addonId)
-        ? prev.addons.filter(a => a !== addonId)
-        : [...prev.addons, addonId]
-    }))
-  }
-
   return (
     <section id="booking" className="relative py-24 md:py-32 overflow-hidden bg-white">
       {/* Immersive Background Decorations */}
@@ -127,13 +106,13 @@ _Dikirim dari website sembaradventure.com_`
         <ScrollReveal>
           <div className="text-center mb-16">
             <Badge className="bg-emerald-950 text-emerald-400 border-emerald-800 mb-6 px-6 py-2 text-sm uppercase tracking-[0.3em] font-black">
-              Reservasi Cepat
+              Booking Trip
             </Badge>
             <h2 className="text-4xl md:text-6xl font-black text-emerald-950 mb-6 tracking-tighter uppercase font-outfit">
-              AMANKAN <span className="text-emerald-500">JADWAL</span> ANDA
+              AMANKAN <span className="text-emerald-500">TRIP</span> ANDA
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
-              Wujudkan petualangan impian Anda dengan pengisian form singkat yang langsung terhubung ke WhatsApp Admin kami.
+              Isi form berikut dan kami akan konfirmasi via WhatsApp. Pembayaran via BCA — bisa DP atau lunas sesuai kesepakatan.
             </p>
           </div>
         </ScrollReveal>
@@ -149,9 +128,9 @@ _Dikirim dari website sembaradventure.com_`
                 <ul className="space-y-6">
                   {[
                     { title: "Konfirmasi Real-time", icon: CheckCircle },
-                    { title: "Pembayaran Aman", icon: Send },
-                    { title: "SOP Internasional", icon: Shield },
-                    { title: "Asuransi Lengkap", icon: User }
+                    { title: "Pembayaran via BCA", icon: Send },
+                    { title: "Peralatan Lengkap", icon: Shield },
+                    { title: "Tim Rescue Siaga", icon: User }
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4 items-start">
                       <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">

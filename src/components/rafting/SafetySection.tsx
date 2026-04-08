@@ -122,13 +122,13 @@ export function SafetySection() {
               <div className="relative z-10 flex-shrink-0">
                 <div className="flex items-center gap-4 bg-emerald-50 px-6 py-4 rounded-2xl border border-emerald-100">
                   <div className="text-center">
-                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Insurance</p>
-                    <p className="text-xl font-black text-emerald-950 font-outfit">COVERED</p>
+                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Berdiri</p>
+                    <p className="text-xl font-black text-emerald-950 font-outfit">SEJAK 2010</p>
                   </div>
                   <div className="w-px h-8 bg-emerald-200" />
                   <div className="text-center">
-                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Support</p>
-                    <p className="text-xl font-black text-emerald-950 font-outfit">24/7 LIVE</p>
+                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Operasional</p>
+                    <p className="text-xl font-black text-emerald-950 font-outfit">SETIAP HARI</p>
                   </div>
                 </div>
               </div>
