@@ -97,7 +97,7 @@ export function WhyChooseUsSection() {
                     <Users className="h-6 w-6 text-emerald-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Pemandu Lokal Berpengalaman</h3>
-                  <p className="text-gray-600 text-sm">Menguasai setiap lekuk dan jeram Sungai Cisadane sejak 2010.</p>
+                  <p className="text-gray-600 text-sm">Menguasai setiap lekuk dan jeram Sungai Cisadane.</p>
                 </div>
                 <div className="text-4xl font-black text-emerald-50/50 group-hover:text-emerald-100 transition-colors">02</div>
               </div>

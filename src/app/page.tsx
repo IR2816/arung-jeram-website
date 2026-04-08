@@ -149,7 +149,7 @@ export default function Home() {
               <div className="text-center mb-12 lg:mb-20">
                 <ScrollReveal>
                   <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 mb-6 px-4 py-2 text-sm uppercase tracking-widest font-bold backdrop-blur-md">
-                    Rafting Terbaik di Bogor — Beroperasi sejak 2010
+                    Rafting Terbaik di Bogor
                   </Badge>
                   <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter font-outfit uppercase">
                     Arung Jeram <span className="text-emerald-400">Sungai</span><br />Cisadane.

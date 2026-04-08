@@ -35,14 +35,31 @@ export function ContactSection() {
           />
         </ScrollReveal>
 
-        <div className="mt-12">
-          <ScrollReveal direction="right">
-            <Card className="border-0 shadow-xl overflow-hidden min-h-[500px]">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ScrollReveal direction="left">
+            <p className="text-sm font-semibold text-emerald-700 mb-2 text-center">📍 Sembar Adventure</p>
+            <Card className="border-0 shadow-xl overflow-hidden min-h-[400px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.9!2d106.6618818!3d-6.4684479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69dd0079b77229%3A0x7620c15d8f94c653!2sSEMBAR%20ADVENTURE%20(Rafting%2C%20Outbond%2C%20Cafe)!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
                 width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '500px' }}
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </Card>
+          </ScrollReveal>
+
+          <ScrollReveal direction="right">
+            <p className="text-sm font-semibold text-emerald-700 mb-2 text-center">📍 Grand Titik Kumpul</p>
+            <Card className="border-0 shadow-xl overflow-hidden min-h-[400px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d992.7!2d106.8152977!3d-6.7143764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69cd0d9a30c359%3A0x240227981d3f9df0!2sGrand%20Titik%20Kumpul!5e0!3m2!1sen!2sid!4v1700000000001!5m2!1sen!2sid"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
