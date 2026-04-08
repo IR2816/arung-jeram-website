@@ -201,6 +201,31 @@ export function CafeSection() {
                 </CardContent>
               </Card>
             </ScrollReveal>
+
+            <ScrollReveal direction="right" delay={400}>
+              <Card className="border-0 shadow-xl bg-white overflow-hidden">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Grand Titik Kumpul</h3>
+                  <p className="text-gray-600 flex items-start gap-3 leading-relaxed">
+                    <MapPin className="h-6 w-6 text-amber-500 flex-shrink-0 mt-1" />
+                    <span>
+                      Grand Titik Kumpul<br />
+                      Kabupaten Bogor, Jawa Barat
+                    </span>
+                  </p>
+                  <a 
+                    href="https://www.google.com/maps/place/Grand+Titik+Kumpul/@-6.7140994,106.8159334,18z/data=!4m6!3m5!1s0x2e69cd0d9a30c359:0x240227981d3f9df0!8m2!3d-6.7143764!4d106.8152977!16s%2Fg%2F11x_5kbs2b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-full py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                      <MapPin className="h-5 w-5 mr-2" />
+                      Lihat di Google Maps
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
           </div>
         </div>
       </div>
