@@ -35,10 +35,10 @@ const trustPoints = [
 ]
 
 const differentiators = [
-  { label: 'Jalur Rafting', value: '3 Pilihan', desc: 'Fun Rafting, Panorama Trip, dan Adventure Trip' },
-  { label: 'Lintasan Terpanjang', value: '10 KM', desc: 'Adventure Trip untuk adrenalin maksimal' },
-  { label: 'Fasilitas', value: 'Lengkap', desc: 'Cafe, camping, paintball, dan outbound' },
-  { label: 'Jam Operasional', value: '09:00 - 15:00', desc: 'Buka 6 hari dalam seminggu' },
+  { label: 'Pilihan Paket', value: '4 Paket', desc: 'Fun Rafting, Family Trip, Adventure Trip, dan Longtrip' },
+  { label: 'Jalur Terpanjang', value: '12 KM', desc: 'Adventure Trip & Longtrip untuk pengarungan penuh' },
+  { label: 'Kapasitas', value: '6 Orang', desc: '1 perahu = 6 orang. Grup besar pakai beberapa perahu' },
+  { label: 'Jam Operasional', value: 'Setiap Hari', desc: 'Buka 7 hari seminggu untuk Anda' },
 ]
 
 export function WhyChooseUsSection() {
