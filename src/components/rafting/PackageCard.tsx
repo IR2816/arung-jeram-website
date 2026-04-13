@@ -127,13 +127,13 @@ export function PackageCard({ pkg }: PackageCardProps) {
           <div className="space-y-4 mt-6 pt-6 border-t border-gray-200">
             {pkg.inclusion && (
               <div>
-                <span className="text-[8px] font-black text-emerald-700 uppercase tracking-widest block mb-2">✓ SUDAH TERMASUK</span>
+                <span className="text-[8px] font-black text-emerald-700 uppercase tracking-widest block mb-2">✓ INCLUDE</span>
                 <p className="text-xs text-gray-600 leading-relaxed">{pkg.inclusion}</p>
               </div>
             )}
             {pkg.exclusion && (
               <div className="mt-3">
-                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block mb-2">✗ TIDAK TERMASUK</span>
+                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block mb-2">✗ EXCLUDE</span>
                 <p className="text-xs text-gray-600 leading-relaxed">{pkg.exclusion}</p>
               </div>
             )}
