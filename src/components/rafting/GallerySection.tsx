@@ -14,6 +14,9 @@ const galleryImages = [
   { src: '/images/Rafting/webp/10.webp', alt: 'Rafting Adventure', span: false },
   { src: '/images/Rafting/webp/3.webp', alt: 'Petualangan Seru', span: false },
   { src: '/images/Rafting/webp/11.webp', alt: 'Pemandu Lokal', span: false },
+  { src: '/images/Rafting/webp/5.webp', alt: 'Momen Instagram 1', span: false },
+  { src: '/images/Rafting/webp/6.webp', alt: 'Momen Instagram 2', span: false },
+  { src: '/images/Rafting/webp/8.webp', alt: 'Momen Instagram 3', span: false },
 ]
 
 export function GallerySection() {
@@ -78,6 +81,17 @@ export function GallerySection() {
               </ScrollReveal>
             );
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="https://www.tiktok.com/@sembar_adventure"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center font-bold px-8 py-4 rounded-full bg-black text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Lihat Video di TikTok
+          </a>
         </div>
       </div>
     </section>
