@@ -47,10 +47,11 @@ export function Navbar() {
   }, [lastScrollY, isVisible])
 
   return (
-    <header 
-      className={`fixed left-0 right-0 z-50 mx-auto transition-all duration-500 ease-out ${
-        isVisible ? 'translate-y-0' : '-translate-y-[150%]'
-      } ${
+    <>
+      <header 
+        className={`fixed left-0 right-0 z-50 mx-auto transition-all duration-500 ease-out ${
+          isVisible ? 'translate-y-0' : '-translate-y-[150%]'
+        } ${
         isScrolled 
           ? 'top-4 md:top-6 w-[calc(100%-2rem)] max-w-5xl bg-background/90 backdrop-blur-xl border border-border/50 shadow-2xl shadow-emerald-500/10 rounded-[2.5rem] py-1.5' 
           : 'top-0 w-full max-w-full bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm rounded-none py-0'
@@ -104,7 +105,7 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu (Right Off-canvas) */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
@@ -112,6 +113,7 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[85vw] sm:w-[400px] p-0 border-l-0 bg-emerald-950 text-white overflow-hidden flex flex-col">
+
               <SheetTitle className="sr-only">Menu Navigasi</SheetTitle>
               
               {/* Sidebar Header */}
@@ -194,6 +196,31 @@ export function Navbar() {
           </Sheet>
         </nav>
       </div>
-    </header>
+      </header>
+
+      {/* Bottom Nav for Mobile */}
+      <div className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-background/95 backdrop-blur-md border-t border-border/50 shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-out pb-safe ${isVisible ? 'translate-y-0' : 'translate-y-[150%]'}`}>
+        <div className="flex items-center justify-around h-16 px-4 pb-1">
+          <Link href="#home" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+            <Home className="h-5 w-5" />
+            <span className="text-[10px] font-medium">Beranda</span>
+          </Link>
+          <Link href="#paket" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+            <Package className="h-5 w-5" />
+            <span className="text-[10px] font-medium">Paket</span>
+          </Link>
+          <Link href="#booking" className="flex flex-col items-center justify-center gap-1 relative -top-3 w-16">
+            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 border-4 border-background">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <span className="text-[10px] font-bold text-emerald-600 mt-1">Booking</span>
+          </Link>
+          <Link href="#kontak" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+            <Phone className="h-5 w-5" />
+            <span className="text-[10px] font-medium">Kontak</span>
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
