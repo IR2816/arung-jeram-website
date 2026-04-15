@@ -16,6 +16,8 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
 import NextImage from 'next/image'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ArrowRightLeft, MessageCircle } from 'lucide-react'
 import { TestimonialCarousel } from '@/components/ui/testimonial'
 
@@ -126,6 +128,15 @@ const packages: PackageType[] = [
 ]
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress: heroScrollY } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  })
+  
+  const heroImageY = useTransform(heroScrollY, [0, 1], ["-10%", "20%"])
+  const heroBgY = useTransform(heroScrollY, [0, 1], ["0%", "50%"])
+
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
       <Navbar />
@@ -133,13 +144,12 @@ export default function Home() {
 
       <main className="flex-1 mesh-gradient">
         {/* ========== IMMERSIVE HERO SECTION ========== */}
-        <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
-          {/* Animated Background Mesh */}
-          <div className="absolute inset-0 z-0 opactiy-40">
+        <section ref={heroRef} id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
+          <motion.div style={{ y: heroBgY }} className="absolute inset-0 z-0 opacity-40">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)] animate-pulse" />
             <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-emerald-500/20 rounded-full blur-[120px] animate-float" />
             <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-teal-500/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '-2s' }} />
-          </div>
+          </motion.div>
 
           {/* Hero Content Wrapper */}
           <div className="container mx-auto px-4 relative z-10 pt-32 pb-12">
@@ -173,18 +183,21 @@ export default function Home() {
               </div>
 
               {/* Wide Hero Banner - DESKTOP ONLY */}
-              <div className="hidden lg:block">
+              <div className="hidden lg:block relative z-10">
                 <ScrollReveal delay={200}>
-                  <div className="relative aspect-[21/7] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group card-shine">
-                    <NextImage
-                      src="/images/Rafting/webp/Banner_sembar_adventure.webp"
-                      alt="Sembar Adventure Hero Full"
-                      fill
-                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 via-transparent to-transparent" />
-
+                  <div className="flex relative aspect-[21/7] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group card-shine">
+                    <motion.div style={{ y: heroImageY }} className="absolute w-full h-[140%] -top-[20%]">
+                      <NextImage
+                        src="/images/Rafting/webp/Banner_sembar_adventure.webp"
+                        alt="Sembar Adventure Hero Full"
+                        fill
+                        className="object-cover object-center"
+                        priority
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                      />
+                    </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-black/20 to-transparent mix-blend-multiply" />
+                    
                     {/* Floating Info Overlay */}
                     <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                       <div className="glass-dark px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl">

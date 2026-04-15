@@ -1,6 +1,8 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Sparkles, Waves, Coffee, Tent, Target, Clock, MapPin } from 'lucide-react'
@@ -59,21 +61,33 @@ export function Banner({
 }: BannerProps) {
   const bgImage = backgroundImage || getRandomRaftingImage()
 
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"])
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"])
+
   return (
-    <section className="relative bg-black">
+    <section ref={containerRef} className="relative bg-black overflow-hidden">
       {/* Background: blur-cover layer + gradient, to look premium while keeping image uncropped */}
-      <div className="absolute inset-0 overflow-hidden">
+      <motion.div 
+        style={{ y: bgY }}
+        className="absolute inset-0 w-full h-[150%] -top-[25%] pointer-events-none scale-105"
+      >
         <Image
           src={bgImage}
           alt=""
           fill
-          className="object-cover scale-110 blur-2xl opacity-55"
+          className="object-cover blur-2xl opacity-55"
           priority
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_20%,rgba(16,185,129,0.28),transparent_55%),radial-gradient(900px_520px_at_85%_35%,rgba(20,184,166,0.22),transparent_60%)]" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 pt-16 sm:pt-18 md:pt-20 pb-16 md:pb-20">
         <div className="container mx-auto px-4">
@@ -81,16 +95,21 @@ export function Banner({
             {/* Banner Visual (top, full-width, no crop) */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 via-transparent to-teal-400/10" />
-                <div className="relative aspect-[21/9] sm:aspect-[24/7] md:aspect-[24/6] lg:aspect-[24/5]">
-                  <Image
-                    src={bgImage}
-                    alt="Sembar Adventure Banner"
-                    fill
-                    className="object-cover p-0.5 md:p-1.5 rounded-2xl"
-                    priority
-                    sizes="100vw"
-                  />
+                <div className="absolute inset-0 z-10 bg-gradient-to-br from-emerald-500/15 via-transparent to-teal-400/10 pointer-events-none" />
+                <div className="relative aspect-[21/9] sm:aspect-[24/7] md:aspect-[24/6] lg:aspect-[24/5] overflow-hidden">
+                  <motion.div 
+                    style={{ y: imageY }}
+                    className="absolute w-full h-[130%] -top-[15%] pointer-events-none"
+                  >
+                    <Image
+                      src={bgImage}
+                      alt="Sembar Adventure Banner"
+                      fill
+                      className="object-cover p-0.5 md:p-1.5 rounded-[1.75rem]"
+                      priority
+                      sizes="100vw"
+                    />
+                  </motion.div>
                 </div>
               </div>
               <div className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-emerald-500/25 blur-2xl" />

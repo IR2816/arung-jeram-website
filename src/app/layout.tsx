@@ -44,6 +44,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Preloader } from "@/components/rafting/Preloader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${outfit.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground font-sans">
+        <Preloader />
         {children}
         <Toaster />
       </body>
