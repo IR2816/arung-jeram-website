@@ -28,7 +28,7 @@ export function WeatherWidget() {
 
   if (loading) {
     return (
-      <div className="fixed bottom-20 md:bottom-6 left-4 z-50 glass-dark bg-black/40 backdrop-blur-xl border border-white/20 p-3 rounded-2xl shadow-2xl flex items-center justify-center w-40 h-16">
+      <div className="fixed bottom-24 lg:bottom-6 left-4 z-50 glass-dark bg-black/40 backdrop-blur-xl border border-white/20 p-3 rounded-2xl shadow-2xl flex items-center justify-center w-40 h-16">
         <Loader2 className="h-5 w-5 text-emerald-400 animate-spin" />
       </div>
     )
@@ -52,7 +52,7 @@ export function WeatherWidget() {
   }
 
   return (
-    <div className="fixed bottom-20 md:bottom-6 left-4 z-50 group">
+    <div className="fixed bottom-24 lg:bottom-6 left-4 z-50 group">
       <div className="glass-dark bg-black/60 backdrop-blur-xl border border-white/20 p-3 rounded-2xl shadow-2xl hover:bg-black/80 transition-all duration-300 transform hover:scale-105 cursor-pointer">
         <div className="flex items-center gap-3">
           <div className={`p-2 bg-white/5 rounded-xl ${iconColor}`}>

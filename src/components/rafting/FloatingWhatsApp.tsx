@@ -11,7 +11,7 @@ export function FloatingWhatsApp() {
   const whatsappUrl = getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya tentang paket rafting!')
 
   return (
-    <div className="fixed bottom-6 right-4 md:right-6 z-[100]">
+    <div className="fixed bottom-24 lg:bottom-6 right-4 md:right-6 z-[100]">    
       {/* Popup */}
       {isOpen && (
         <div className="absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl p-5 w-72 animate-scale-in border border-gray-100">
