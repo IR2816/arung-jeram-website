@@ -277,18 +277,9 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal>
-              <div className="flex items-center justify-center gap-3 mb-10 md:hidden animate-in fade-in slide-in-from-bottom-4 duration-700">
-                <div className="flex items-center gap-2 bg-emerald-950 text-white px-6 py-3 rounded-2xl shadow-premium border border-white/10 group active:scale-95 transition-all">
-                  <ArrowRightLeft className="h-4 w-4 text-emerald-400 group-hover:rotate-180 transition-transform duration-500" />
-                  <span className="text-[10px] font-black uppercase tracking-widest">Geser & Pilih Paket</span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 overflow-x-auto md:overflow-x-visible pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 pb-8 md:pb-0 w-full">
               {packages.map((pkg, i) => (
-                <div key={pkg.id} className="min-w-[85vw] sm:min-w-[340px] md:min-w-0 snap-center flex-shrink-0 h-full">
+                <div key={pkg.id} className="w-full h-full">
                   <ScrollReveal delay={i * 100} className="h-full">
                     <PackageCard pkg={pkg} />
                   </ScrollReveal>
