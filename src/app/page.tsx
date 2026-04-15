@@ -144,91 +144,85 @@ export default function Home() {
 
       <main className="flex-1 mesh-gradient">
         {/* ========== IMMERSIVE HERO SECTION ========== */}
-        <section ref={heroRef} id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
-          <motion.div style={{ y: heroBgY }} className="absolute inset-0 z-0 opacity-40">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)] animate-pulse" />
-            <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-emerald-500/20 rounded-full blur-[120px] animate-float" />
-            <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-teal-500/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '-2s' }} />
+        <section ref={heroRef} id="home" className="relative min-h-[100vh] lg:min-h-[95vh] flex flex-col items-center justify-center overflow-hidden">
+          {/* Parallax Background Image */}
+          <motion.div style={{ y: heroBgY }} className="absolute inset-x-0 -top-[20%] h-[140%] z-0">
+            <NextImage
+              src="/images/Rafting/webp/Banner_sembar_adventure.webp"
+              alt="Sembar Adventure Hero Full"
+              fill
+              className="object-cover object-center lg:object-top"
+              priority
+              sizes="100vw"
+            />
+            {/* Gradient Overlays for Readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/90 via-emerald-950/60 to-emerald-950/90" />
+            <div className="absolute inset-0 bg-black/40" />
           </motion.div>
 
-          {/* Hero Content Wrapper */}
-          <div className="container mx-auto px-4 relative z-10 pt-32 pb-12">
-            <div className="max-w-6xl mx-auto">
-              {/* Text Intro Area */}
-              <div className="text-center mb-12 lg:mb-20">
-                <ScrollReveal>
-                  <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 mb-6 px-4 py-2 text-sm uppercase tracking-widest font-bold backdrop-blur-md">
-                    Rafting Terbaik di Bogor
-                  </Badge>
-                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter font-outfit uppercase">
-                    Arung Jeram <span className="text-emerald-400">Sungai</span><br />Cisadane.
-                  </h1>
-                  <p className="text-emerald-100/60 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                    Tersedia 4 pilihan jalur untuk semua tingkat kemampuan — dari 15 menit hingga 2,5 jam. Peralatan lengkap, pemandu profesional, tim rescue siaga.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#paket">
-                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 h-16 text-lg rounded-2xl shadow-[0_20px_40px_-10px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold group">
-                        Lihat Paket Rafting
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </a>
-                    <a href="#booking">
-                      <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-10 h-16 text-lg rounded-2xl backdrop-blur-md transition-all duration-300 font-bold">
-                        Amankan Trip Sekarang
-                      </Button>
-                    </a>
-                  </div>
-                </ScrollReveal>
-              </div>
+          <div className="absolute z-0 inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.15),transparent_70%)] animate-pulse" />
+            <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-emerald-500/20 rounded-full blur-[120px] animate-float" />
+            <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-teal-500/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '-2s' }} />
+          </div>
 
-              {/* Wide Hero Banner - DESKTOP ONLY */}
-              <div className="hidden lg:block relative z-10">
-                <ScrollReveal delay={200}>
-                  <div className="flex relative aspect-[21/7] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group card-shine">
-                    <motion.div style={{ y: heroImageY }} className="absolute w-full h-[140%] -top-[20%]">
-                      <NextImage
-                        src="/images/Rafting/webp/Banner_sembar_adventure.webp"
-                        alt="Sembar Adventure Hero Full"
-                        fill
-                        className="object-cover object-center"
-                        priority
-                        sizes="(max-width: 1200px) 100vw, 1200px"
-                      />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-black/20 to-transparent mix-blend-multiply" />
-                    
-                    {/* Floating Info Overlay */}
-                    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-                      <div className="glass-dark px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl">
-                        <div className="flex gap-12">
-                          <div>
-                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Jalur Rafting</p>
-                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">12 KM</p>
-                          </div>
-                          <div className="w-px h-10 bg-white/10" />
-                          <div>
-                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Durasi Maks</p>
-                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">2.5 JAM</p>
-                          </div>
-                          <div className="w-px h-10 bg-white/10" />
-                          <div>
-                            <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Keamanan</p>
-                            <p className="text-2xl font-black text-white font-outfit uppercase leading-tight">CERTIFIED</p>
-                          </div>
-                        </div>
-                      </div>
+          {/* Hero Content Wrapper */}
+          <div className="container mx-auto px-4 relative z-10 pt-32 pb-24 lg:pb-16 flex-1 flex flex-col justify-center">
+            <div className="max-w-4xl mx-auto lg:mx-0 text-center lg:text-left">
+              <ScrollReveal>
+                <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-400/30 mb-6 px-4 py-2 text-sm lg:text-base uppercase tracking-widest font-bold backdrop-blur-md">
+                  Rafting Terbaik di Bogor
+                </Badge>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-[0.9] tracking-tighter font-outfit uppercase drop-shadow-xl">
+                  Arung Jeram <br className="hidden lg:block"/>
+                  <span className="text-emerald-400 drop-shadow-lg">Sungai</span> Cisadane.
+                </h1>
+                <p className="text-emerald-50/90 text-base md:text-xl lg:text-2xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-md">
+                  Tersedia 4 pilihan jalur untuk semua tingkat kemampuan — dari 15 menit hingga 2,5 jam. Peralatan lengkap, pemandu profesional, tim rescue siaga.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <a href="#paket" className="w-full sm:w-auto">
+                    <Button size="lg" className="w-full bg-emerald-500 hover:bg-emerald-600 text-white px-8 md:px-10 h-14 md:h-16 text-base md:text-lg rounded-2xl shadow-[0_20px_40px_-10px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold group">
+                      Lihat Paket Rafting
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </a>
+                  <a href="#booking" className="w-full sm:w-auto">
+                    <Button size="lg" variant="outline" className="w-full border-white/30 text-white hover:bg-white/20 px-8 md:px-10 h-14 md:h-16 text-base md:text-lg rounded-2xl backdrop-blur-md transition-all duration-300 font-bold">
+                      Amankan Trip Sekarang
+                    </Button>
+                  </a>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Floating Info Overlay - Mobile friendly and Desktop aligned */}
+            <div className="mt-16 lg:mt-20 w-full max-w-4xl mx-auto lg:mx-0">
+              <ScrollReveal delay={200}>
+                <div className="glass-dark px-4 py-6 md:px-8 md:py-6 rounded-3xl border border-white/20 backdrop-blur-xl bg-black/40 shadow-2xl relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent pointer-events-none" />
+                  <div className="grid grid-cols-3 gap-2 md:gap-12 divide-x divide-white/20 relative z-10">
+                    <div className="text-center lg:text-left px-1 md:px-0">
+                      <p className="text-[10px] md:text-xs text-emerald-400 font-bold uppercase tracking-widest mb-1 md:mb-2 text-wrap">Jalur Rafting</p>
+                      <p className="text-lg sm:text-2xl md:text-3xl font-black text-white font-outfit uppercase leading-tight">12 KM</p>
+                    </div>
+                    <div className="text-center lg:text-left px-1 md:px-4">
+                      <p className="text-[10px] md:text-xs text-emerald-400 font-bold uppercase tracking-widest mb-1 md:mb-2 text-wrap">Durasi Maks</p>
+                      <p className="text-lg sm:text-2xl md:text-3xl font-black text-white font-outfit uppercase leading-tight">2.5 JAM</p>
+                    </div>
+                    <div className="text-center lg:text-left px-1 md:px-4">
+                      <p className="text-[10px] md:text-xs text-emerald-400 font-bold uppercase tracking-widest mb-1 md:mb-2 text-wrap">Keamanan</p>
+                      <p className="text-lg sm:text-2xl md:text-3xl font-black text-white font-outfit uppercase leading-tight">CERTIFIED</p>
                     </div>
                   </div>
-                </ScrollReveal>
-              </div>
-
+                </div>
+              </ScrollReveal>
             </div>
           </div>
 
           {/* Bottom Wave Decor */}
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-px">
-            <svg className="relative block w-[calc(100%+1.3px)] h-[80px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-px z-10">
+            <svg className="relative block w-[calc(100%+1.3px)] h-[40px] md:h-[80px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.47,113.84,122.2,125.44,188.47,116.32,246.33,108.33,288,81.16,321.39,56.44Z" className="fill-white"></path>
             </svg>
           </div>
