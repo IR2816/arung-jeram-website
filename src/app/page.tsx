@@ -12,7 +12,6 @@ import { FAQSection } from '@/components/rafting/FAQSection'
 import { WhyChooseUsSection } from '@/components/rafting/WhyChooseUsSection'
 import { FloatingWhatsApp } from '@/components/rafting/FloatingWhatsApp'
 import { WeatherWidget } from '@/components/rafting/WeatherWidget'
-import { ComparePackages } from '@/components/rafting/ComparePackages'
 import { ScrollReveal } from '@/components/rafting/Animations'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -317,11 +316,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ========== KOMPARASI PAKET ========== */}
-        <ComparePackages />
 
-        {/* ========== LOKASI ========== */}
-        <ContactSection />
 
         {/* ========== WHY CHOOSE US ========== */}
         <WhyChooseUsSection />
