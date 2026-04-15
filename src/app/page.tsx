@@ -57,7 +57,7 @@ const packages: PackageType[] = [
       'Cocok untuk anak usia 6 tahun ke atas',
       'Pemandu skipper profesional',
     ],
-    inclusion: 'Peralatan arung jeram, Helm, Dayung, Pemandu (Skipper), Tim Rescue, Ruang Ganti',
+    inclusion: 'Peralatan arung jeram, Helm, Dayung, Pemandu (Skipper), Tim Rescue, Ruang Ganti, Saung, Musholla, Parkiran',
     exclusion: 'Foto & Video (Rp 100.000/perahu)',
     imageUrl: '/images/Rafting/webp/5.webp',
     featured: false,

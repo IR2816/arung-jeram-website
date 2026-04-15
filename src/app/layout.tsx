@@ -21,7 +21,9 @@ export const metadata: Metadata = {
   keywords: ["arung jeram", "rafting", "Bogor", "Cisadane", "Sembar Adventure", "outbound", "rafting Bogor", "wisata air", "family rafting", "adventure"],
   authors: [{ name: "Sembar Adventure" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.jpeg",
+    shortcut: "/favicon.jpeg",
+    apple: "/favicon.jpeg",
   },
   openGraph: {
     title: "Sembar Adventure - Arung Jeram Sungai Cisadane",
