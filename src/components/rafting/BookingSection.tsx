@@ -38,7 +38,9 @@ const packages = [
 
 const documentationOptions = [
   { id: 'none', name: 'Tidak, Terima Kasih' },
-  { id: 'foto-video', name: 'Foto & Video — Rp 200.000/perahu (Fun, Family, Adventure)' },
+  { id: 'foto-video-fun', name: 'Foto & Video — Rp 100.000/perahu (Fun Rafting)' },
+  { id: 'foto-video-family', name: 'Foto & Video — Rp 150.000/perahu (Family/Panorama Trip)' },
+  { id: 'foto-video-adventure', name: 'Foto & Video — Rp 250.000/perahu (Adventure Trip)' },
   { id: 'foto-video-longtrip', name: 'Foto & Video — Rp 300.000/perahu (Longtrip)' },
 ]
 
