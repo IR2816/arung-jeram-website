@@ -11,6 +11,8 @@ import { SafetySection } from '@/components/rafting/SafetySection'
 import { FAQSection } from '@/components/rafting/FAQSection'
 import { WhyChooseUsSection } from '@/components/rafting/WhyChooseUsSection'
 import { FloatingWhatsApp } from '@/components/rafting/FloatingWhatsApp'
+import { WeatherWidget } from '@/components/rafting/WeatherWidget'
+import { ComparePackages } from '@/components/rafting/ComparePackages'
 import { ScrollReveal } from '@/components/rafting/Animations'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -141,6 +143,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
       <Navbar />
       <FloatingWhatsApp />
+      <WeatherWidget />
 
       <main className="flex-1 mesh-gradient">
         {/* ========== IMMERSIVE HERO SECTION ========== */}
@@ -313,6 +316,9 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </section>
+
+        {/* ========== KOMPARASI PAKET ========== */}
+        <ComparePackages />
 
         {/* ========== LOKASI ========== */}
         <ContactSection />
