@@ -21,30 +21,72 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [activeSection, setActiveSection] = useState('home')
 
+  // Auto-hide on idle mechanism
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      setIsScrolled(currentScrollY > 20)
+    let timeoutId: NodeJS.Timeout
+
+    const handleInteract = () => {
+      setIsVisible(true)
+      clearTimeout(timeoutId)
       
-      // Auto-hide when scrolling down, show when scrolling up
-      if (currentScrollY > 300) {
-        if (currentScrollY > lastScrollY && isVisible) {
-          setIsVisible(false) // Scrolling down
-        } else if (currentScrollY < lastScrollY && !isVisible) {
-          setIsVisible(true) // Scrolling up
+      timeoutId = setTimeout(() => {
+        // Only hide if not at the very top of the page
+        if (window.scrollY > 20) {
+          setIsVisible(false)
         }
-      } else {
-        setIsVisible(true) // Always show at the top
-      }
-      setLastScrollY(currentScrollY)
+      }, 3000)
     }
 
-    // passive: true for smoother scrolling
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+      handleInteract()
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY, isVisible])
+    window.addEventListener('mousemove', handleInteract)
+    window.addEventListener('touchstart', handleInteract)
+    window.addEventListener('keydown', handleInteract)
+
+    // Init
+    handleInteract()
+
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleInteract)
+      window.removeEventListener('touchstart', handleInteract)
+      window.removeEventListener('keydown', handleInteract)
+    }
+  }, [])
+
+  // Scroll spy for active sections
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-20% 0px -60% 0px' }
+    )
+
+    // IDs from both navLinks and mobile bottom nav
+    const sections = navLinks.map(link => link.href.substring(1))
+    if (!sections.includes('booking')) sections.push('booking')
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
@@ -73,15 +115,22 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-emerald-600 transition-colors font-medium text-sm underline-animation"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.substring(1)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors text-sm underline-animation ${
+                    isActive 
+                      ? 'text-emerald-600 font-bold font-black underline' 
+                      : 'text-gray-600 hover:text-emerald-600 font-medium'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* CTA Buttons */}
@@ -201,21 +250,21 @@ export function Navbar() {
       {/* Bottom Nav for Mobile */}
       <div className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-background/95 backdrop-blur-md border-t border-border/50 shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-out pb-safe ${isVisible ? 'translate-y-0' : 'translate-y-[150%]'}`}>
         <div className="flex items-center justify-around h-16 px-4 pb-1">
-          <Link href="#home" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+          <Link href="#home" className={`flex flex-col items-center justify-center gap-1 transition-colors w-16 ${activeSection === 'home' ? 'text-emerald-600' : 'text-muted-foreground hover:text-emerald-600'}`}>
             <Home className="h-5 w-5" />
             <span className="text-[10px] font-medium">Beranda</span>
           </Link>
-          <Link href="#paket" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+          <Link href="#paket" className={`flex flex-col items-center justify-center gap-1 transition-colors w-16 ${activeSection === 'paket' ? 'text-emerald-600' : 'text-muted-foreground hover:text-emerald-600'}`}>
             <Package className="h-5 w-5" />
             <span className="text-[10px] font-medium">Paket</span>
           </Link>
           <Link href="#booking" className="flex flex-col items-center justify-center gap-1 relative -top-3 w-16">
-            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 border-4 border-background">
+            <div className={`w-12 h-12 bg-gradient-to-br rounded-full flex items-center justify-center text-white shadow-lg border-4 border-background transition-shadow ${activeSection === 'booking' ? 'from-emerald-600 to-teal-700 shadow-emerald-500/50' : 'from-emerald-500 to-teal-600 shadow-emerald-500/30'}`}>
               <ShieldCheck className="h-6 w-6" />
             </div>
             <span className="text-[10px] font-bold text-emerald-600 mt-1">Booking</span>
           </Link>
-          <Link href="#kontak" className="flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-emerald-600 transition-colors w-16">
+          <Link href="#kontak" className={`flex flex-col items-center justify-center gap-1 transition-colors w-16 ${activeSection === 'kontak' ? 'text-emerald-600' : 'text-muted-foreground hover:text-emerald-600'}`}>
             <Phone className="h-5 w-5" />
             <span className="text-[10px] font-medium">Kontak</span>
           </Link>
