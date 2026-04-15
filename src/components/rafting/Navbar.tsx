@@ -27,7 +27,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 font-bold group">
             <div className="bg-emerald-950 p-2.5 rounded-2xl shadow-xl group-hover:bg-black transition-colors duration-300">
-              <Image src="/favicon.png" alt="Sembar Adventure" width={28} height={28} className="object-contain" />
+              <Image src="/favicon.png" alt="Sembar Adventure" width={28} height={28} className="object-contain" priority />
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-emerald-950 text-2xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
@@ -85,7 +85,7 @@ export function Navbar() {
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="bg-white p-2 rounded-xl">
-                      <Image src="/favicon.png" alt="Sembar Adventure" width={24} height={24} className="object-contain" />
+                      <Image src="/favicon.png" alt="Sembar Adventure" width={24} height={24} className="object-contain" priority />
                     </div>
                     <div className="flex flex-col leading-none">
                       <span className="text-white text-xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
