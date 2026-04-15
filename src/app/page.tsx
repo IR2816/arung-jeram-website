@@ -182,22 +182,43 @@ export default function Home() {
               </ScrollReveal>
             </div>
 
-            {/* Dashboard / App Presentation Image Container */}
-            <div className="w-full max-w-7xl mx-auto relative mt-4">
+            {/* Mobile-only Floating Stats */}
+            <div className="md:hidden mt-8 w-full z-20">
+              <ScrollReveal delay={400}>
+                <div className="glass-dark px-4 py-6 rounded-3xl border border-white/20 backdrop-blur-xl bg-black/60 shadow-2xl overflow-hidden shadow-emerald-900/50 relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-teal-500/10 to-emerald-500/20 pointer-events-none" />
+                  <div className="grid grid-cols-3 gap-2 divide-x divide-white/20 relative z-10 w-full min-w-[280px]">
+                    <div className="text-center px-1 flex flex-col items-center justify-center">
+                      <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1 w-full">Jalur Rafting</p>
+                      <p className="text-lg sm:text-2xl font-black text-white font-outfit uppercase leading-none">12 KM</p>
+                    </div>
+                    <div className="text-center px-1 flex flex-col items-center justify-center">
+                      <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1 w-full">Durasi Maks</p>
+                      <p className="text-lg sm:text-2xl font-black text-white font-outfit uppercase leading-none">2.5 JAM</p>
+                    </div>
+                    <div className="text-center px-1 flex flex-col items-center justify-center">
+                      <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1 w-full">Keamanan</p>
+                      <p className="text-lg sm:text-2xl font-black text-white font-outfit uppercase leading-none">CERTIFIED</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Dashboard / App Presentation Image Container (Desktop Only) */}
+            <div className="hidden md:block w-full max-w-6xl mx-auto relative mt-10">
               <ScrollReveal delay={200} className="relative z-0">
-                <div className="relative w-full aspect-video md:aspect-[21/9] lg:aspect-[24/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 bg-emerald-950">
-                  {/* Parallax Background Image inside the rounded container */}
-                  <motion.div style={{ y: heroBgY }} className="absolute inset-x-0 -top-[20%] h-[140%] w-full">
+                <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 bg-emerald-950 flex flex-col items-center justify-center">
                     <NextImage
                       src="/images/Rafting/webp/Banner_sembar_adventure.webp"
                       alt="Sembar Adventure Hero Full"
-                      fill
-                      className="object-cover object-center lg:object-top"
+                      width={1400}
+                      height={400}
+                      className="w-full h-auto object-contain"
                       priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 </div>
               </ScrollReveal>
 
