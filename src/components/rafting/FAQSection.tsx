@@ -142,10 +142,11 @@ export function FAQSection() {
                   href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya')}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-block w-full sm:w-auto"
                 >
-                  <Button className="bg-emerald-500 hover:bg-emerald-600 text-white h-16 px-12 text-lg rounded-2xl shadow-xl transition-all duration-300 font-black group uppercase tracking-widest">
-                    HUBUNGI KAMI SEKARANG
-                    <MessageCircle className="ml-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <Button className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white h-14 sm:h-16 px-6 sm:px-12 text-sm md:text-lg rounded-2xl shadow-xl transition-all duration-300 font-black group uppercase tracking-widest flex items-center justify-center gap-3">
+                    <span>Hubungi Kami Sekarang</span>
+                    <MessageCircle className="h-5 w-5 shrink-0 group-hover:scale-110 transition-transform" />
                   </Button>
                 </a>
               </div>
