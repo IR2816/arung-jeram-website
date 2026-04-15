@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { useState } from 'react'
 import { getWhatsAppUrl } from '@/lib/whatsapp'
-import { Home, Info, Package, ShieldCheck, HelpCircle, Phone, ArrowRight, Instagram, Waves, Menu, X } from 'lucide-react'
+import { Home, Info, Package, ShieldCheck, HelpCircle, Phone, ArrowRight, Instagram, Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '#home', label: 'Beranda', icon: Home },
@@ -26,7 +27,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 font-bold group">
             <div className="bg-emerald-950 p-2.5 rounded-2xl shadow-xl group-hover:bg-black transition-colors duration-300">
-              <Waves className="h-7 w-7 text-emerald-400" />
+              <Image src="/favicon.png" alt="Sembar Adventure" width={28} height={28} className="h-7 w-7 object-contain" />
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-emerald-950 text-2xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
@@ -84,7 +85,7 @@ export function Navbar() {
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="bg-white p-2 rounded-xl">
-                      <Waves className="h-6 w-6 text-emerald-900" />
+                      <Image src="/favicon.png" alt="Sembar Adventure" width={24} height={24} className="h-6 w-6 object-contain" />
                     </div>
                     <div className="flex flex-col leading-none">
                       <span className="text-white text-xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
