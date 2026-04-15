@@ -85,7 +85,7 @@ export function Navbar() {
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="bg-white p-2 rounded-xl">
-                      <Image src="/favicon.png" alt="Sembar Adventure" width={24} height={24} className="object-contain" priority />
+                      <Image src="/favicon.png" alt="Sembar Adventure" width={24} height={24} className="object-contain" />
                     </div>
                     <div className="flex flex-col leading-none">
                       <span className="text-white text-xl font-black tracking-tighter uppercase font-outfit">SEMBAR</span>
