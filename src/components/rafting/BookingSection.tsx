@@ -236,8 +236,8 @@ _Dikirim dari website sembaradventure.com_`
                           <div 
                             key={pkg.id}
                             onClick={() => {
-                              setFormData({ ...formData, package: pkg.id });
-                              setTimeout(nextStep, 200);
+                                setFormData(prev => ({ ...prev, package: pkg.id }));
+                                setTimeout(() => setStep(2), 250);
                             }}
                             className={cn(
                               "relative p-6 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-lg group",
