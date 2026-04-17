@@ -25,21 +25,67 @@ import { TestimonialCarousel } from '@/components/ui/testimonial'
 const testimonials = [
   {
     id: 1,
-    name: "Andi Wijaya",
-    avatar: "https://i.pravatar.cc/150?u=andi",
-    description: "Pemandunya sangat profesional dan ramah. Jeramnya seru, kami merasa aman sepanjang perjalanan. Sangat direkomendasikan untuk keluarga!"
+    name: "Eva Shofia",
+    avatar: "https://i.pravatar.cc/150?u=eva",
+    description: "Barusan kami sekeluarga ikut arung jeram ini wiih keren banget seru",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOMU1qVmlkbkZhY3pSYWJsQnVUVmxoVFVGUWRrRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOjN1MjVidnFaczRablBuTVlhTUFQdkE%7C%7C?hl=en"
   },
   {
     id: 2,
-    name: "Siti Aminah",
-    avatar: "https://i.pravatar.cc/150?u=siti",
-    description: "Pengalaman rafting yang luar biasa bersama keluarga. Anak-anak sangat senang dan merasa aman dengan pemandu yang berpengalaman."
+    name: "Rindi Ariani",
+    avatar: "https://i.pravatar.cc/150?u=rindi",
+    description: "Seruuu bangeett apalagi klo sama bestie, bakal ketagihan, ketawa2, jerit2an bareng hehehe melepas penat dr sibuknya dunia ... Guide nya jg ramah trs helpful bgt gaess ..",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxaE1VbHVXbXhWWWtwWlJGTTVPV3hLWVdaVmNHYxAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOk1hMUluWmxVYkpZRFM5OWxKYWZVcGc%7C%7C?hl=en"
   },
   {
     id: 3,
-    name: "Rizky Pratama",
-    avatar: "https://i.pravatar.cc/150?u=rizky",
-    description: "Ikut Adventure Trip, jeramnya benar-benar menantang! Tim rescue standby di setiap titik kritis. Puas banget, pasti balik lagi."
+    name: "Agus Sutiyono",
+    avatar: "https://i.pravatar.cc/150?u=agus",
+    description: "Kombinasi pemandangan, arus sungai yang aman namun menantang, serta dukungan dari masyarakat lokal membuat tempat ini sangat direkomendasikan... Jangan lupa siapkan diri untuk basah kuyup!",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wNWRGaFVTVFo1T0ZGT1pXcE5RVXhaV1dGSlIxRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOmp5dFhUSTZ5OFFOZWpNQUxZWWFJR1E%7C%7C?hl=en"
+  },
+  {
+    id: 4,
+    name: "Nahdah SyaakiraA",
+    avatar: "https://i.pravatar.cc/150?u=nahdah2",
+    description: "Ini arum jeram baru tapi standarnya udah kaya yg pro player!! guide nya ramah seru dan ngejelasinnya detail bgt bikin ngerasa aman... fasilitas cukup lengkap. WORTH IT GENGSSS !!!",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSQk9IWkJhMVEzV1hwWVZXOTVOemxoYjJnMExWRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOkRBOHZBa1Q3WXpYVW95Nzlhb2g0LVE%7C%7C?hl=en"
+  },
+  {
+    id: 5,
+    name: "Syapaat Nisa Rabbani",
+    avatar: "https://i.pravatar.cc/150?u=syapaat",
+    description: "Seru banget rafting di bumdesa semplak barat, Pemandunya berpengalaman, lucu, dan menyenangkan... Lokasi strategis dengan pemandangan bagus dan sejuk.",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsbWJuVmhXRXd4WDNwbFZIUjVibWhwTTBSdVNVRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOllmbnVhWEwxX3plVHR5bmhpM0RuSUE%7C%7C?hl=en"
+  },
+  {
+    id: 6,
+    name: "rachmeta trie",
+    avatar: "https://i.pravatar.cc/150?u=rachmeta",
+    description: "Akses menuju tempat raftingnya ga terlalu jauh, aman juga, suasananya juga masih asri, bnyak pohon pohon, guidenya jg ramah trus helpful bgt.",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGU1pHcHJZWEJxTjFkYWJWRlJMVTFTVUhBNWIxRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOlFSZGprYXBqN1dabVFRLU1SUHA5b1E%7C%7C?hl=en"
+  },
+  {
+    id: 7,
+    name: "Mafia King",
+    avatar: "https://i.pravatar.cc/150?u=mafiaking",
+    description: "Tempat nya bagus dan asri, cocok buat melepas penat atau sekedar untuk ngopi. Warga nya baik dan ramah, fasilitas nya juga lumayan... kalian gaakan rugi😁👍",
+    stars: 5,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFeFJqYzNlbEZoTjJ4aWNEaFVZVkZSV2xSWU4xRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOkExRjc3elFhN2xicDhUYVFRWlRYN1E%7C%7C?hl=en"
+  },
+  {
+    id: 8,
+    name: "Sulhanudin",
+    avatar: "https://i.pravatar.cc/150?u=sulhan",
+    description: "Seruuu banget pokonya main arung jeram + view hutan cifor, menyatu dengan alam🔥🌊.",
+    stars: 4,
+    reviewUrl: "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25KblIzaE5ZM3B5ZFc5R2N6a3dabUZhUmtSSlNrRRAB!2m1!1s0x0:0x2c93af67f597c46f!3m1!1s2@1:CAIQACodChtycF9oOnJnR3hNY3pydW9GczkwZmFaRkRJSkE%7C%7C?hl=en"
   }
 ]
 
@@ -423,6 +469,9 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </section>
+
+        {/* ========== CONTACT & LOKASI ========== */}
+        <ContactSection />
 
         {/* ========== BOOKING ========== */}
         <BookingSection />

@@ -7,6 +7,8 @@ interface Testimonial {
     name: string
     avatar: string
     description: string
+    reviewUrl?: string
+    stars?: number
 }
 
 interface TestimonialCarouselProps
@@ -104,17 +106,35 @@ const TestimonialCarousel = React.forwardRef<
                                     </div>
                                 )}
 
-                                <div className="p-6 flex flex-col items-center gap-4">
-                                    <img
-                                        src={testimonial.avatar}
-                                        alt={testimonial.name}
-                                        className="w-16 h-16 rounded-full object-cover"
-                                    />
-                                    <h3 className="text-lg font-semibold text-gray-800 dark:text-foreground">
-                                        {testimonial.name}
-                                    </h3>
-                                    <p className="text-center text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">
-                                        {testimonial.description}
+                                <div className="p-6 flex flex-col items-center gap-3">
+                                    <div className="relative">
+                                      <img
+                                          src={testimonial.avatar}
+                                          alt={testimonial.name}
+                                          className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-md border-2 border-emerald-50"
+                                      />
+                                      {testimonial.reviewUrl && (
+                                        <a href={testimonial.reviewUrl} target="_blank" rel="noopener noreferrer" className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-md hover:scale-110 transition-transform">
+                                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Google_Maps_icon.svg/512px-Google_Maps_icon.svg.png" alt="Google Maps" className="w-5 h-5 object-contain" />
+                                        </a>
+                                      )}
+                                    </div>
+                                    <div className="text-center space-y-1">
+                                      <h3 className="text-base md:text-lg font-bold text-gray-900 leading-none">
+                                          {testimonial.name}
+                                      </h3>
+                                      {testimonial.stars && (
+                                          <div className="flex justify-center gap-0.5 text-amber-400">
+                                              {[...Array(testimonial.stars)].map((_, i) => (
+                                                  <svg key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 fill-current" viewBox="0 0 20 20">
+                                                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                  </svg>
+                                              ))}
+                                          </div>
+                                      )}
+                                    </div>
+                                    <p className="text-center text-xs md:text-sm text-gray-600 leading-relaxed line-clamp-4 px-2">
+                                        "{testimonial.description}"
                                     </p>
                                 </div>
                             </motion.div>
