@@ -1,7 +1,12 @@
 const DEFAULT_WHATSAPP_NUMBER = '62813192117399'
+const DEFAULT_BOOKING_NUMBER = '6285811531446'
 
 export function getWhatsAppNumber(): string {
   return (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
+}
+
+export function getBookingNumber(): string {
+  return (process.env.NEXT_PUBLIC_BOOKING_NUMBER || DEFAULT_BOOKING_NUMBER).replace(/\D/g, '')
 }
 
 export function formatPhoneNumber(number: string): string {
@@ -16,6 +21,12 @@ export function formatPhoneNumber(number: string): string {
 
 export function getWhatsAppUrl(message?: string): string {
   const base = `https://wa.me/${getWhatsAppNumber()}`
+  if (!message) return base
+  return `${base}?text=${encodeURIComponent(message)}`
+}
+
+export function getBookingUrl(message?: string): string {
+  const base = `https://wa.me/${getBookingNumber()}`
   if (!message) return base
   return `${base}?text=${encodeURIComponent(message)}`
 }
