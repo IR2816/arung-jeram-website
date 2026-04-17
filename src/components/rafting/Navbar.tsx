@@ -105,7 +105,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3 font-bold group">
             <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 shadow-sm transition-all duration-500 group-hover:shadow-md group-hover:border-emerald-200 group-hover:-translate-y-0.5 overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 via-transparent to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-               <Image src="/Icon.png" alt="Sembar Adventure" width={32} height={32} className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" priority />
+               <Image src="/Icon.png" alt="Sembar Adventure" width={48} height={48} className="w-full h-full object-cover relative z-10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" priority />
             </div>
             <div className="flex flex-col justify-center">
               <span className="text-foreground text-[22px] font-black tracking-tighter uppercase font-outfit leading-none mb-0.5">SEMBAR</span>
@@ -172,7 +172,7 @@ export function Navbar() {
                   <div className="flex items-center gap-3 mb-8 group">
                     <div className="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/20 shadow-inner overflow-hidden transition-transform duration-500 group-hover:scale-105">
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 via-transparent to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <Image src="/Icon.png" alt="Sembar Adventure" width={38} height={38} className="object-contain relative z-10 transition-transform duration-500 group-hover:-rotate-3" priority />
+                      <Image src="/Icon.png" alt="Sembar Adventure" width={56} height={56} className="w-full h-full object-cover relative z-10 transition-transform duration-500 group-hover:-rotate-3" priority />
                     </div>
                     <div className="flex flex-col justify-center">
                       <span className="text-white text-[24px] font-black tracking-tighter uppercase font-outfit leading-none mb-1">SEMBAR</span>
