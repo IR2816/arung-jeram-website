@@ -27,7 +27,7 @@ import { id } from 'date-fns/locale'
 import { CalendarIcon, Send, Users, Phone, User, Package, CheckCircle, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ScrollReveal } from './Animations'
-import { getWhatsAppUrl } from '@/lib/whatsapp'
+import { getBookingUrl } from '@/lib/whatsapp'
 
 const packages = [
   { id: 'fun-rafting', name: 'Fun Rafting', price: 100000, duration: '15 menit', distance: '1 KM' },
@@ -113,7 +113,7 @@ _Dikirim dari website sembaradventure.com_`
     }
 
     const message = generateWhatsAppMessage()
-    window.open(getWhatsAppUrl(message), '_blank', 'noopener,noreferrer')
+    window.open(getBookingUrl(message), '_blank', 'noopener,noreferrer')
   }
 
   const nextStep = () => {

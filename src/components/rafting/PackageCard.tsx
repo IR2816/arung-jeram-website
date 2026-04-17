@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Clock, Users, ArrowRight, MessageCircle, Target, Check, X } from 'lucide-react'
 import NextImage from 'next/image'
-import { getWhatsAppUrl } from '@/lib/whatsapp'
+import { getBookingUrl } from '@/lib/whatsapp'
 
 export interface PackageType {
   id: string
@@ -29,7 +29,7 @@ interface PackageCardProps {
 }
 
 export function PackageCard({ pkg }: PackageCardProps) {
-  const whatsappUrl = getWhatsAppUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}* seharga Rp ${pkg.price.toLocaleString('id-ID')}. Mohon info lebih lanjut untuk booking.`)
+  const whatsappUrl = getBookingUrl(`Halo Sembar Adventure, saya tertarik dengan paket *${pkg.name}* seharga Rp ${pkg.price.toLocaleString('id-ID')}. Mohon info lebih lanjut untuk booking.`)
 
   const handleSelect = () => {
     // Dispatch custom event for BookingSection to pick up

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { useState, useEffect } from 'react'
-import { getWhatsAppUrl } from '@/lib/whatsapp'
+import { getWhatsAppUrl, getBookingUrl } from '@/lib/whatsapp'
 import { Home, Info, Package, ShieldCheck, HelpCircle, Phone, ArrowRight, Instagram, Menu, X } from 'lucide-react'
 
 const navLinks = [
@@ -141,7 +141,7 @@ export function Navbar() {
               </Button>
             </a>
             <a
-              href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin booking')}
+              href={getBookingUrl('Halo Sembar Adventure, saya ingin booking')}
               target="_blank"
               rel="noopener noreferrer"
             >
