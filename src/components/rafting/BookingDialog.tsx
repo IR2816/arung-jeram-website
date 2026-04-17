@@ -18,6 +18,7 @@ import { format } from 'date-fns'
 import { id } from 'date-fns/locale'
 import { CalendarIcon, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { getWhatsAppUrl } from '@/lib/whatsapp'
 import type { PackageType } from './PackageCard'
 
 interface BookingDialogProps {
@@ -64,8 +65,8 @@ ${formData.notes || '-'}
 _Dikirim dari website sembaradventure.com_`
 
     // Open WhatsApp
-    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6285811531446'}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
-    
+    window.open(getWhatsAppUrl(message), '_blank', 'noopener,noreferrer')
+
     setSuccess(true)
     setLoading(false)
     
