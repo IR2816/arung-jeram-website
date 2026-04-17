@@ -1,5 +1,5 @@
-const DEFAULT_WHATSAPP_NUMBER = '62813192117399'
-const DEFAULT_BOOKING_NUMBER = '6285811531446'
+const DEFAULT_WHATSAPP_NUMBER = '6285811531446' // Nomor Kontak Umum
+const DEFAULT_BOOKING_NUMBER = '62813192117399' // Nomor Khusus Booking
 
 export function getWhatsAppNumber(): string {
   return (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
