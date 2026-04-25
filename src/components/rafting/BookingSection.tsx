@@ -92,7 +92,7 @@ export function BookingSection() {
   const generateWhatsAppMessage = () => {
     const packageName = selectedPackage?.name || 'Paket tidak dipilih'
     const dateStr = date ? format(date, 'EEEE, d MMMM yyyy', { locale: id }) : 'Tanggal belum dipilih'
-    const docOption = documentationOptions.find(d => d.id === formData.documentation)
+    const docOption = docOptions.find(d => d.id === formData.documentation)
     const docText = docOption && docOption.id !== 'none' ? `\n📸 Dokumentasi: ${docOption.name}` : ''
 
     const message = `🌊 BOOKING SEMBAR ADVENTURE
@@ -458,7 +458,7 @@ _Dikirim dari website sembaradventure.com_`
                           </div>
 
                           <div className="text-muted-foreground font-bold uppercase tracking-wider text-[10px]">Dokumentasi</div>
-                          <div className="font-black text-right text-emerald-950">{documentationOptions.find(d => d.id === formData.documentation)?.name}</div>
+                          <div className="font-black text-right text-emerald-950">{docOptions.find(d => d.id === formData.documentation)?.name}</div>
                         </div>
 
                         <div className="bg-emerald-950 rounded-2xl p-5 mt-4 shadow-xl">
