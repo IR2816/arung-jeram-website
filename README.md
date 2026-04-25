@@ -18,7 +18,7 @@ Website ini telah diperbarui secara total dengan standar desain web terkini:
 
 ## 📍 Lokasi
 
-**Alamat:** Jl. Lembah Cisadane Jl. H. Miing No.1a, RT.4/RW.2, Putat Nutug, Kec. Ciseeng, Kabupaten Bogor, Jawa Barat 16120
+**Alamat:** Desa Semplak Barat, kecamatan kemang, kabupaten Bogor
 
 **Google Maps:** [Klik untuk melihat lokasi](https://www.google.com/maps/place/SEMBAR+ADVENTURE+(Rafting,+Outbond,Cafe)/@-6.4684479,106.6618818,17z/)
 

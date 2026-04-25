@@ -183,8 +183,8 @@ export function CafeSection() {
                   <p className="text-gray-600 flex items-start gap-3 leading-relaxed">
                     <MapPin className="h-6 w-6 text-amber-500 flex-shrink-0 mt-1" />
                     <span>
-                      Jl. Lembah Cisadane Jl. H. Miing No.1a<br />
-                      RT.4/RW.2, Putat Nutug, Kec. Ciseeng<br />
+                      Desa Semplak Barat, kecamatan kemang, kabupaten Bogor<br />
+                      
                       Kabupaten Bogor, Jawa Barat 16120
                     </span>
                   </p>

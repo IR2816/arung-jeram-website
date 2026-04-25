@@ -58,7 +58,7 @@ export function Footer() {
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-5 w-5 text-emerald-400" />
                   </div>
-                  <p className="text-xs font-bold leading-relaxed">Jl. H. Miing No.1a, Putat Nutug, Ciseeng, Kabupaten Bogor, Jawa Barat</p>
+                  <p className="text-xs font-bold leading-relaxed">Desa Semplak Barat, kecamatan kemang, kabupaten Bogor</p>
                 </div>
                 <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">

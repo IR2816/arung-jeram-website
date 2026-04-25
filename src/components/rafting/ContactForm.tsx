@@ -49,7 +49,7 @@ _Dikirim dari website sembaradventure.com_`
   }
 
   const contactInfo = [
-    { icon: MapPin, title: 'Alamat', content: 'Jl. Lembah Cisadane Jl. H. Miing No.1a, RT.4/RW.2, Putat Nutug, Kec. Ciseeng, Kabupaten Bogor, Jawa Barat 16120', color: 'from-emerald-400 to-teal-500' },
+    { icon: MapPin, title: 'Alamat', content: 'Desa Semplak Barat, kecamatan kemang, kabupaten Bogor', color: 'from-emerald-400 to-teal-500' },
     { icon: Phone, title: 'Telepon', content: formatPhoneNumber(getWhatsAppNumber()), color: 'from-blue-400 to-cyan-500' },
     { icon: Mail, title: 'Email', content: 'info@sembahadventure.com', color: 'from-amber-400 to-orange-500' },
     { icon: Clock, title: 'Jam Operasional', content: 'Senin - Kamis, Sabtu - Minggu: 10:00 - 16:30 WIB', color: 'from-purple-400 to-pink-500' },

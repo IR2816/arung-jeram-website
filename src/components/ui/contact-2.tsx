@@ -26,7 +26,7 @@ export const Contact2 = ({
   className,
   title = "Hubungi Kami",
   description = "Kami siap menjawab pertanyaan, request informasi, atau kebutuhan kolaborasi. Tulis pesanmu dan kami akan respon via WhatsApp.",
-  address = "Desa Putat Nutug, Ciseeng, Bogor",
+  address = "Desa Semplak Barat, kecamatan kemang, kabupaten Bogor",
   phone,
   email = "sembaradventure@gmail.com",
   web = { label: "Instagram @sembar_adventure", url: "https://www.instagram.com/sembar_adventure/" },

@@ -37,7 +37,7 @@ export function ContactSection() {
                 embedded
                 title="Kirim Pesan"
                 description="Isi form ini, lalu sistem kami akan otomatis membuka WhatsApp dengan detail pesanan Anda."
-                address="Desa Putat Nutug, Ciseeng, Bogor"
+                address="Desa Semplak Barat, kecamatan kemang, kabupaten Bogor"
                 email="sembaradventure@gmail.com"
                 web={{ label: 'Instagram @sembar_adventure', url: 'https://www.instagram.com/sembar_adventure/' }}
                 whatsappGreeting="Halo Sembar Adventure, saya ingin bertanya:"
