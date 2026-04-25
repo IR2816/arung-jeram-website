@@ -69,7 +69,7 @@ export function BookingSection() {
   // Smart calculations
   const selectedPackage = packages.find(p => p.id === formData.package)
   const docOptions = getDocumentationOptions(formData.package);
-  const selectedDocInfo = docOptions.find(d => d.id === formData.documentation) || docOptions[0];
+  const selectedDocInfo = docOptions.find(d => d.id === formData.documentation) ?? docOptions[0] ?? { price: 0 };
   
   const totalBoats = Math.ceil(formData.participants / 6) // Asumsi 1 perahu max 6 pax
   const subtotalPackage = (selectedPackage?.price || 0) * formData.participants
