@@ -36,13 +36,22 @@ const packages = [
   { id: 'longtrip', name: 'Longtrip', price: 300000, duration: '2,5 jam', distance: '12 KM' },
 ]
 
-const documentationOptions = [
-  { id: 'none', name: 'Tidak, Terima Kasih', price: 0 },
-  { id: 'foto-video-fun', name: 'Foto & Video — (Fun Rafting)', price: 100000 },
-  { id: 'foto-video-family', name: 'Foto & Video — (Family/Panorama)', price: 150000 },
-  { id: 'foto-video-adventure', name: 'Foto & Video — (Adventure Trip)', price: 250000 },
-  { id: 'foto-video-longtrip', name: 'Foto & Video — (Longtrip)', price: 300000 },
-]
+
+const documentationPriceMap: Record<string, number> = {
+  'fun-rafting': 100000,
+  'family-trip': 150000,
+  'adventure-trip': 250000,
+  'longtrip': 300000,
+};
+
+function getDocumentationOptions(selectedPackageId: string) {
+  return [
+    { id: 'none', name: 'Tidak, Terima Kasih', price: 0 },
+    selectedPackageId && documentationPriceMap[selectedPackageId]
+      ? { id: 'foto-video', name: 'Foto & Video', price: documentationPriceMap[selectedPackageId] }
+      : null,
+  ].filter(Boolean);
+}
 
 
 export function BookingSection() {
@@ -59,7 +68,8 @@ export function BookingSection() {
 
   // Smart calculations
   const selectedPackage = packages.find(p => p.id === formData.package)
-  const selectedDocInfo = documentationOptions.find(d => d.id === formData.documentation) || documentationOptions[0]
+  const docOptions = getDocumentationOptions(formData.package);
+  const selectedDocInfo = docOptions.find(d => d.id === formData.documentation) || docOptions[0];
   
   const totalBoats = Math.ceil(formData.participants / 6) // Asumsi 1 perahu max 6 pax
   const subtotalPackage = (selectedPackage?.price || 0) * formData.participants
@@ -380,7 +390,7 @@ _Dikirim dari website sembaradventure.com_`
                               <SelectValue placeholder="Pilih dokumentasi" />
                             </SelectTrigger>
                             <SelectContent className="rounded-xl border-emerald-100 font-bold text-xs md:text-sm">
-                              {documentationOptions.map((doc) => (
+                              {docOptions.map((doc) => (
                                 <SelectItem key={doc.id} value={doc.id}>
                                   <div className="flex items-center gap-2">
                                     <span className="text-emerald-950 font-black">{doc.name}</span>
