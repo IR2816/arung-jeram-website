@@ -44,13 +44,16 @@ const documentationPriceMap: Record<string, number> = {
   'longtrip': 300000,
 };
 
-function getDocumentationOptions(selectedPackageId: string) {
-  return [
+
+type DocumentationOption = { id: string; name: string; price: number };
+function getDocumentationOptions(selectedPackageId: string): DocumentationOption[] {
+  const options: (DocumentationOption | null)[] = [
     { id: 'none', name: 'Tidak, Terima Kasih', price: 0 },
     selectedPackageId && documentationPriceMap[selectedPackageId]
       ? { id: 'foto-video', name: 'Foto & Video', price: documentationPriceMap[selectedPackageId] }
       : null,
-  ].filter(Boolean);
+  ];
+  return options.filter((x): x is DocumentationOption => x !== null);
 }
 
 
