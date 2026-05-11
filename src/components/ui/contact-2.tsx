@@ -11,6 +11,7 @@ import { getWhatsAppUrl, getWhatsAppNumber, formatPhoneNumber } from "@/lib/what
 
 interface Contact2Props {
   embedded?: boolean
+  showOnlyForm?: boolean
   className?: string
   title?: string
   description?: string
@@ -23,6 +24,7 @@ interface Contact2Props {
 
 export const Contact2 = ({
   embedded = false,
+  showOnlyForm = false,
   className,
   title = "Hubungi Kami",
   description = "Kami siap menjawab pertanyaan, request informasi, atau kebutuhan kolaborasi. Tulis pesanmu dan kami akan respon via WhatsApp.",
@@ -63,108 +65,184 @@ export const Contact2 = ({
   return (
     <Wrapper className={wrapperClassName}>
       <div className="container">
-        <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-          <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
-            <div className="text-center lg:text-left">
-              <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
-                {title}
-              </h1>
-              <p className="text-muted-foreground">{description}</p>
-            </div>
-            <div className="mx-auto w-fit lg:mx-0">
-              <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">Detail Kontak</h3>
-              <ul className="ml-4 list-disc">
-                <li>
-                  <span className="font-bold">Alamat: </span>
-                  {address}
-                </li>
-                <li>
-                  <span className="font-bold">WhatsApp: </span>
-                  {displayPhone}
-                </li>
-                <li>
-                  <span className="font-bold">Email: </span>
-                  <a href={`mailto:${email}`} className="underline">
-                    {email}
-                  </a>
-                </li>
-                <li>
-                  <span className="font-bold">Web: </span>
-                  <a
-                    href={web.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline"
-                  >
-                    {web.label}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <form
-            onSubmit={handleSubmit}
-            className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10"
-          >
-            <div className="flex gap-4">
+        {showOnlyForm ? (
+          // Show only the form
+          <div className="mx-auto max-w-screen-md">
+            <form
+              onSubmit={handleSubmit}
+              className="mx-auto flex flex-col gap-6 rounded-lg border p-10"
+            >
+              <div className="mb-4">
+                <h1 className="mb-2 text-5xl font-semibold">{title}</h1>
+                <p className="text-muted-foreground">{description}</p>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="contact-firstname">Nama Depan</Label>
+                  <Input
+                    type="text"
+                    id="contact-firstname"
+                    placeholder="Nama depan"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="contact-lastname">Nama Belakang</Label>
+                  <Input
+                    type="text"
+                    id="contact-lastname"
+                    placeholder="Nama belakang"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+              </div>
               <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="contact-firstname">Nama Depan</Label>
+                <Label htmlFor="contact-email">Email</Label>
+                <Input
+                  type="email"
+                  id="contact-email"
+                  placeholder="email@example.com"
+                  value={emailInput}
+                  onChange={(e) => setEmailInput(e.target.value)}
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="contact-subject">Subjek</Label>
                 <Input
                   type="text"
-                  id="contact-firstname"
-                  placeholder="Nama depan"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  id="contact-subject"
+                  placeholder="Contoh: tanya paket rafting"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   required
                 />
               </div>
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="contact-lastname">Nama Belakang</Label>
-                <Input
-                  type="text"
-                  id="contact-lastname"
-                  placeholder="Nama belakang"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+              <div className="grid w-full gap-1.5">
+                <Label htmlFor="contact-message">Pesan</Label>
+                <Textarea
+                  placeholder="Tulis pesan kamu di sini..."
+                  id="contact-message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                 />
               </div>
+              <Button type="submit" className="w-full">
+                Kirim via WhatsApp
+              </Button>
+            </form>
+          </div>
+        ) : (
+          // Show both contact info and form
+          <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
+            <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
+              <div className="text-center lg:text-left">
+                <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
+                  {title}
+                </h1>
+                <p className="text-muted-foreground">{description}</p>
+              </div>
+              <div className="mx-auto w-fit lg:mx-0">
+                <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">Detail Kontak</h3>
+                <ul className="ml-4 list-disc space-y-3">
+                  <li>
+                    <span className="font-bold">Alamat: </span>
+                    {address}
+                  </li>
+                  <li>
+                    <span className="font-bold">WhatsApp: </span>
+                    <a
+                      href={`https://wa.me/${getWhatsAppNumber().replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-green-600 transition-colors font-semibold text-green-500"
+                    >
+                      {displayPhone}
+                    </a>
+                    <span className="text-xs text-gray-400 block">Klik untuk membuka WhatsApp</span>
+                  </li>
+                  <li>
+                    <span className="font-bold">Web: </span>
+                    <a
+                      href={web.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline hover:text-blue-600 transition-colors"
+                    >
+                      {web.label}
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label htmlFor="contact-email">Email</Label>
-              <Input
-                type="email"
-                id="contact-email"
-                placeholder="email@example.com"
-                value={emailInput}
-                onChange={(e) => setEmailInput(e.target.value)}
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label htmlFor="contact-subject">Subjek</Label>
-              <Input
-                type="text"
-                id="contact-subject"
-                placeholder="Contoh: tanya paket rafting"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              />
-            </div>
-            <div className="grid w-full gap-1.5">
-              <Label htmlFor="contact-message">Pesan</Label>
-              <Textarea
-                placeholder="Tulis pesan kamu di sini..."
-                id="contact-message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              Kirim via WhatsApp
-            </Button>
-          </form>
-        </div>
+            <form
+              onSubmit={handleSubmit}
+              className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10"
+            >
+              <div className="flex gap-4">
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="contact-firstname">Nama Depan</Label>
+                  <Input
+                    type="text"
+                    id="contact-firstname"
+                    placeholder="Nama depan"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="contact-lastname">Nama Belakang</Label>
+                  <Input
+                    type="text"
+                    id="contact-lastname"
+                    placeholder="Nama belakang"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="contact-email">Email</Label>
+                <Input
+                  type="email"
+                  id="contact-email"
+                  placeholder="email@example.com"
+                  value={emailInput}
+                  onChange={(e) => setEmailInput(e.target.value)}
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="contact-subject">Subjek</Label>
+                <Input
+                  type="text"
+                  id="contact-subject"
+                  placeholder="Contoh: tanya paket rafting"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="grid w-full gap-1.5">
+                <Label htmlFor="contact-message">Pesan</Label>
+                <Textarea
+                  placeholder="Tulis pesan kamu di sini..."
+                  id="contact-message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                />
+              </div>
+              <Button type="submit" className="w-full">
+                Kirim via WhatsApp
+              </Button>
+            </form>
+          </div>
+        )}
       </div>
     </Wrapper>
   )

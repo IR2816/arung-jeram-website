@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { MapPin, Phone, Mail, Clock, Loader2, Send, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Clock, Loader2, Send, CheckCircle } from 'lucide-react'
 import { ScrollReveal } from './Animations'
 import { getWhatsAppUrl, getWhatsAppNumber, formatPhoneNumber } from '@/lib/whatsapp'
 
@@ -48,11 +48,13 @@ _Dikirim dari website sembaradventure.com_`
     setTimeout(() => setSuccess(false), 3000)
   }
 
+  const whatsappNumber = formatPhoneNumber(getWhatsAppNumber())
+  const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}`
+
   const contactInfo = [
-    { icon: MapPin, title: 'Alamat', content: 'Desa Semplak Barat, kecamatan kemang, kabupaten Bogor', color: 'from-emerald-400 to-teal-500' },
-    { icon: Phone, title: 'Telepon', content: formatPhoneNumber(getWhatsAppNumber()), color: 'from-blue-400 to-cyan-500' },
-    { icon: Mail, title: 'Email', content: 'info@sembahadventure.com', color: 'from-amber-400 to-orange-500' },
-    { icon: Clock, title: 'Jam Operasional', content: 'Senin - Kamis, Sabtu - Minggu: 10:00 - 16:30 WIB', color: 'from-purple-400 to-pink-500' },
+    { icon: MapPin, title: 'Alamat', content: 'Desa Semplak Barat, kecamatan kemang, kabupaten Bogor', color: 'from-emerald-400 to-teal-500', clickable: false },
+    { icon: Phone, title: 'Telepon', content: whatsappNumber, color: 'from-blue-400 to-cyan-500', clickable: true, link: whatsappUrl },
+    { icon: Clock, title: 'Jam Operasional', content: 'Senin - Kamis, Sabtu - Minggu: 10:00 - 16:30 WIB', color: 'from-purple-400 to-pink-500', clickable: false },
   ]
 
   return (
@@ -63,7 +65,7 @@ _Dikirim dari website sembaradventure.com_`
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Hubungi Kami</h3>
             <p className="text-gray-600 text-lg">
-              Ada pertanyaan atau ingin informasi lebih lanjut? Jangan ragu untuk menghubungi kami.
+              Ada pertanyaan atau ingin informasi lebih lanjut? Jangan ragu untuk menghubungi kami melalui kontak di bawah ini.
             </p>
           </div>
         </ScrollReveal>
@@ -71,23 +73,40 @@ _Dikirim dari website sembaradventure.com_`
         <div className="space-y-4">
           {contactInfo.map((info, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white hover:-translate-y-1 group overflow-hidden">
-                <CardContent className="p-5 flex items-start gap-4">
-                  <div className={`bg-gradient-to-br ${info.color} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                    <info.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-800">{info.title}</h4>
-                    <p className="text-gray-600">{info.content}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              {info.clickable && info.link ? (
+                <a href={info.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white hover:-translate-y-1 group overflow-hidden cursor-pointer">
+                    <CardContent className="p-5 flex items-start gap-4">
+                      <div className={`bg-gradient-to-br ${info.color} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                        <info.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-800">{info.title}</h4>
+                        <p className="text-gray-600 group-hover:text-blue-600 transition-colors duration-300 font-medium">{info.content}</p>
+                        <p className="text-xs text-gray-400 mt-1">Klik untuk membuka WhatsApp</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
+              ) : (
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white hover:-translate-y-1 group overflow-hidden">
+                  <CardContent className="p-5 flex items-start gap-4">
+                    <div className={`bg-gradient-to-br ${info.color} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                      <info.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-800">{info.title}</h4>
+                      <p className="text-gray-600">{info.content}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </ScrollReveal>
           ))}
         </div>
 
         {/* WhatsApp Button */}
-        <ScrollReveal delay={400}>
+        <ScrollReveal delay={300}>
           <a href={getWhatsAppUrl('Halo Sembar Adventure, saya ingin bertanya')} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
               <svg className="h-6 w-6 mr-3" viewBox="0 0 24 24" fill="currentColor">

@@ -35,6 +35,7 @@ export function ContactSection() {
             <div className="bg-background/80 backdrop-blur-xl border border-border/50 shadow-2xl rounded-[2.5rem] p-4 md:p-8">
               <Contact2
                 embedded
+                showOnlyForm
                 title="Kirim Pesan"
                 description="Isi form ini, lalu sistem kami akan otomatis membuka WhatsApp dengan detail pesanan Anda."
                 address="Desa Semplak Barat, kecamatan kemang, kabupaten Bogor"
