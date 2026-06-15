@@ -65,7 +65,14 @@ ${formData.notes || '-'}
 _Dikirim dari website sembaradventure.com_`
 
     // Open WhatsApp
-    window.open(getBookingUrl(message), '_blank', 'noopener,noreferrer')
+    const url = getBookingUrl(message)
+    const a = document.createElement('a')
+    a.href = url
+    a.target = '_blank'
+    a.rel = 'noopener noreferrer'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
 
     setSuccess(true)
     setLoading(false)
